@@ -24,6 +24,17 @@ html {
   --primary-800: #1e40af;
   --primary-900: #1e3a8a;
 
+  --myPrimary-50: #c5e3e2;
+  --myPrimary-100: #b2dad8;
+  --myPrimary-200: #9fd1cf;
+  --myPrimary-300: #8bc8c5;
+  --myPrimary-400: #78bfbb;
+  --myPrimary-500: #65b5b1;
+  --myPrimary-600: #51aca8;
+  --myPrimary-700: #3ea39e;
+  --myPrimary-800: #38938e;
+  --myPrimary-900: #32827e;
+
   /* grey */
   --grey-50: #f0f4f8;
   --grey-100: #d9e2ec;
@@ -148,7 +159,7 @@ ul {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--primary-500);
+  background: var(--myPrimary-600);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -159,8 +170,8 @@ ul {
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primary-700);
-  box-shadow: var(--shadow-3);
+  background: var(--myPrimary-900);
+  box-shadow: var(--shadow-4);
 }
 .btn-hipster {
   color: var(--primary-500);

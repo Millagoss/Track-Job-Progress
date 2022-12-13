@@ -1,7 +1,10 @@
+import { Landing } from './pages';
 
 function App() {
   return (
-   <h1>OLA</h1>
+    <div>
+      <Landing />
+    </div>
   );
 }
 

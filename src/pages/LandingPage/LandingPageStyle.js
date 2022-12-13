@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Wrapper = styled.main`
+const LandingPageWrapper = styled.main`
   nav {
     width: var(--fluid-width);
     max-width: var(--max-width);
@@ -8,6 +8,13 @@ const Wrapper = styled.main`
     height: var(--nav-height);
     display: flex;
     align-items: center;
+
+    span {
+      color: var(--myPrimary-700);
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: var(--headingFont);
+    }
   }
   .page {
     min-height: calc(100vh - var(--nav-height));
@@ -18,11 +25,13 @@ const Wrapper = styled.main`
   h1 {
     font-weight: 700;
     span {
-      color: var(--primary-500);
+      color: var(--myPrimary-700);
     }
   }
   p {
     color: var(--grey-600);
+    letter-spacing: 2px;
+    line-height: 25px;
   }
   .main-img {
     display: none;
@@ -36,5 +45,5 @@ const Wrapper = styled.main`
       display: block;
     }
   }
-`
-export default Wrapper
+`;
+export default LandingPageWrapper;
