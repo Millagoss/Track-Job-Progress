@@ -1,3 +1,3 @@
 # Track your learning progress
 
-user can add new progress, delete progress, update
+#### This app can help you keep track of what you've learned,how much progress you're making, and to schedule and track your learning sessions
