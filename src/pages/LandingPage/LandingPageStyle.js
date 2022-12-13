@@ -9,7 +9,11 @@ const LandingPageWrapper = styled.main`
     display: flex;
     align-items: center;
 
-    span {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       color: var(--myPrimary-700);
       font-size: 2rem;
       font-weight: 800;
@@ -21,6 +25,7 @@ const LandingPageWrapper = styled.main`
     display: grid;
     align-items: center;
     margin-top: -3rem;
+    overflow: hidden;
   }
   h1 {
     font-weight: 700;
@@ -35,11 +40,15 @@ const LandingPageWrapper = styled.main`
   }
   .main-img {
     display: none;
+    z-index: 300;
   }
   @media (min-width: 992px) {
     .page {
       grid-template-columns: 1fr 1fr;
       column-gap: 3rem;
+      .info {
+        padding: 10px;
+      }
     }
     .main-img {
       display: block;

@@ -1,16 +1,31 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import logo from '../../assets/images/logo-32x32.png';
 import main from '../../assets/images/main.png';
 
 import LandingPageWrapper from './LandingPageStyle';
 
 const Landing = () => {
+  const MotionWrapper = motion(LandingPageWrapper);
+
   return (
-    <LandingPageWrapper>
+    <MotionWrapper
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{
+        delay: 1,
+        default: {
+          duration: 0.9,
+        },
+      }}
+    >
       <nav>
-        <img src={logo} alt='TLP' className='logo' />
-        <span className='logo-text'>&nbsp; Track Learning Progress</span>
+        <div className='logo-container'>
+          <img src={logo} alt='TLP' className='logo' />
+          <span className='logo-text'>&nbsp; Track Learning Progress</span>
+        </div>
       </nav>
       <div className='container page'>
         <div className='info'>
@@ -25,11 +40,37 @@ const Landing = () => {
             for a tool that will help you achieve your goals, Learning progress
             tracker app is the perfect option for you!
           </p>
-          <button className='btn btn-hero'>login/Register</button>
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 1.3,
+              default: {
+                duration: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
+              },
+              scale: {
+                type: 'spring',
+                damping: 9,
+                stiffness: 90,
+                restDelta: 0.001,
+              },
+            }}
+            className='btn btn-hero'
+          >
+            login/Register
+          </motion.button>
         </div>
-        <img src={main} alt='TLP' className='img main-img' />
+        <motion.img
+          animate={{ x: 0 }}
+          initial={{ x: 700 }}
+          transition={{ delay: 1.3, type: 'spring', stiffness: 90 }}
+          src={main}
+          alt='TLP'
+          className='img main-img'
+        />
       </div>
-    </LandingPageWrapper>
+    </MotionWrapper>
   );
 };
 
