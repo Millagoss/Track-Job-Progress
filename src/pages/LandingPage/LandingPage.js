@@ -10,6 +10,10 @@ import LandingPageWrapper from './LandingPageStyle';
 const Landing = () => {
   const MotionWrapper = motion(LandingPageWrapper);
 
+  const handleHover = (e) => {
+    e.target.style.transition = ' 0.4s ease-in-out all';
+  };
+
   return (
     <MotionWrapper
       animate={{ opacity: 1 }}
@@ -30,7 +34,7 @@ const Landing = () => {
       <div className='container page'>
         <div className='info'>
           <h1>
-            Learning <span> Progress Tracker</span> app
+            Learning <span>Progress Tracker</span> app
           </h1>
           <p>
             Learning progress tracker app is a great tool that can help you
@@ -41,6 +45,7 @@ const Landing = () => {
             tracker app is the perfect option for you!
           </p>
           <motion.button
+            onMouseOver={handleHover}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

@@ -48,6 +48,10 @@ const LandingPageWrapper = styled.main`
       column-gap: 3rem;
       .info {
         padding: 10px;
+
+        span {
+          text-decoration: underline;
+        }
       }
     }
     .main-img {
