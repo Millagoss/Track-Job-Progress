@@ -1,23 +1,17 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
 
-import logo from '../../assets/images/logo-32x32.png';
 import main from '../../assets/images/main.png';
-
 import LandingPageWrapper from './LandingPageStyle';
-
 import {
   scaleElement,
   deScaleElement,
+  handleHoverTransition,
 } from '../../utils/mouseHoverHandle/handleMouseHover';
+import { LogoComponent } from '../../components/';
 
 const Landing = () => {
   const MotionWrapper = motion(LandingPageWrapper);
-
-  const handleHover = (e) => {
-    e.target.style.transition = ' 0.4s ease-in-out all';
-  };
 
   return (
     <MotionWrapper
@@ -31,10 +25,7 @@ const Landing = () => {
       }}
     >
       <nav>
-        <div className='logo-container'>
-          <img src={logo} alt='TLP' className='logo' />
-          <span className='logo-text'>&nbsp; Track Learning Progress</span>
-        </div>
+        <LogoComponent />
       </nav>
       <div className='container page'>
         <div className='info'>
@@ -50,7 +41,7 @@ const Landing = () => {
             tracker app is the perfect option for you!
           </p>
           <motion.button
-            onMouseOver={handleHover}
+            onMouseOver={handleHoverTransition}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
