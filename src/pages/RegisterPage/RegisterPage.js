@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { Logo } from '../../components';
 import RegisterWrapper from './RegisterPage.style';
+import { FormInput } from '../../components';
 
 const initialState = {
   name: '',
@@ -16,7 +16,7 @@ const RegisterPage = () => {
   const handleChange = (e) => {
     const element = e.target.name;
     const value = e.target.value;
-    setValues({ ...value, [element]: value });
+    setValues({ ...values, [element]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,25 +28,27 @@ const RegisterPage = () => {
       <form className='form' onSubmit={handleSubmit}>
         <span className='logo-container'>Learning Progress Tracker</span>
         <h3>Login</h3>
-        <div className='form-row'>
-          <div className='input-container'>
-            <input
-              type='text'
-              name='name'
-              value={values.name}
-              onChange={handleChange}
-              className='form-input'
-            />
-            <label
-              htmlFor='name'
-              className={`${
-                values.name ? 'move-out' : 'move-in'
-              } form-input-label`}
-            >
-              name
-            </label>
-          </div>
-        </div>
+        <FormInput
+          type='text'
+          name='name'
+          value={values.name}
+          onChange={handleChange}
+          label='name'
+        />
+        <FormInput
+          type='email'
+          name='email'
+          value={values.email}
+          onChange={handleChange}
+          label='email'
+        />
+        <FormInput
+          type='password'
+          name='password'
+          value={values.password}
+          onChange={handleChange}
+          label='password'
+        />
         <button type='submit' className='btn btn-block'>
           submit
         </button>
