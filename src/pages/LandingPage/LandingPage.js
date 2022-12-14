@@ -42,7 +42,9 @@ const LandingPage = () => {
             for a tool that will help you achieve your goals, Learning progress
             tracker app is the perfect option for you!
           </p>
-          <Button />
+          <Link to='/register'>
+            <Button />
+          </Link>
         </div>
         <motion.img
           animate={{ x: 0 }}
