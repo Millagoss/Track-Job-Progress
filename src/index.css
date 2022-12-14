@@ -67,6 +67,7 @@ html {
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --fixed-width: 500px;
+  --fixed-width2: 700px;
   --fluid-width: 90vw;
   --breakpoint-lg: 992px;
   --nav-height: 6rem;
@@ -245,7 +246,7 @@ ul {
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
 }
-.form-input,
+
 .form-select,
 .btn-block {
   height: 35px;
@@ -333,4 +334,24 @@ ul {
 
 .Toastify__toast {
   text-transform: capitalize;
+}
+
+.logo-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  color: var(--myPrimary-700);
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--headingFont);
+}
+.logo {
+  /* background: green; */
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

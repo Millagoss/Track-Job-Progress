@@ -8,17 +8,6 @@ const LandingPageWrapper = styled.main`
     height: var(--nav-height);
     display: flex;
     align-items: center;
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      color: var(--myPrimary-700);
-      font-size: 2rem;
-      font-weight: 800;
-      font-family: var(--headingFont);
-    }
   }
   .page {
     min-height: calc(100vh - var(--nav-height));

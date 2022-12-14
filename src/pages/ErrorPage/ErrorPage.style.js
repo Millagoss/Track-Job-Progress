@@ -36,10 +36,10 @@ const ErrorPageWrapper = styled.main`
     transition: 0.2s ease-in all;
 
     :hover {
-      background: var(--myPrimary-500);
-      border: 1px solid white;
+      background: var(--myPrimary-300);
+      border: none;
       color: var(--white);
-      box-shadow: 0px 5px 25px var(--myPrimary-800);
+      box-shadow: 0px 5px 25px var(--myPrimary-600);
     }
   }
 `;

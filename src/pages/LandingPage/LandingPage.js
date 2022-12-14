@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 // MY IMPORTS
 import main from '../../assets/images/main.png';
-import LandingPageWrapper from './LandingPageStyle';
+import LandingPageWrapper from './LandingPage.style';
 import {
   scaleElement,
   deScaleElement,
