@@ -7,6 +7,11 @@ import main from '../../assets/images/main.png';
 
 import LandingPageWrapper from './LandingPageStyle';
 
+import {
+  scaleElement,
+  deScaleElement,
+} from '../../utils/mouseHoverHandle/handleMouseHover';
+
 const Landing = () => {
   const MotionWrapper = motion(LandingPageWrapper);
 
@@ -73,6 +78,8 @@ const Landing = () => {
           src={main}
           alt='TLP'
           className='img main-img'
+          onMouseOver={scaleElement}
+          onMouseLeave={deScaleElement}
         />
       </div>
     </MotionWrapper>
