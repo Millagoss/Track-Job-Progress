@@ -355,3 +355,7 @@ ul {
   align-items: center;
   justify-content: center;
 }
+
+.transition {
+  transition: 0.5s ease-in-out all;
+}

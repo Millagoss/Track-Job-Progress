@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { handleHoverTransition } from '../../utils/mouseHoverHandle/handleMouseHover';
 
-const Button = () => {
+const Button = ({ label }) => {
   return (
     <motion.button
       onMouseOver={handleHoverTransition}
@@ -24,7 +24,7 @@ const Button = () => {
       }}
       className='btn btn-hero'
     >
-      login/Register
+      {label}
     </motion.button>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import RegisterWrapper from './RegisterPage.style';
 import { FormInput } from '../../components';
+import { handleHoverTransition } from '../../utils/mouseHoverHandle/handleMouseHover';
 
 const initialState = {
   name: '',
@@ -49,7 +50,7 @@ const RegisterPage = () => {
           onChange={handleChange}
           label='password'
         />
-        <button type='submit' className='btn btn-block'>
+        <button type='submit' className='btn btn-block transition'>
           submit
         </button>
       </form>

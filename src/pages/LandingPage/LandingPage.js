@@ -43,7 +43,7 @@ const LandingPage = () => {
             tracker app is the perfect option for you!
           </p>
           <Link to='/register'>
-            <Button />
+            <Button label='login/register' />
           </Link>
         </div>
         <motion.img
