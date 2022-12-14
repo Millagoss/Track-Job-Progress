@@ -1,9 +1,9 @@
-import { Landing } from './pages';
+import { LandingPage, ErrorPage, RegisterPage, DashboardPage } from './pages';
 
 function App() {
   return (
     <div>
-      <Landing />
+      <LandingPage />
     </div>
   );
 }

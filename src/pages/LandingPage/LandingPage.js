@@ -10,7 +10,7 @@ import {
 } from '../../utils/mouseHoverHandle/handleMouseHover';
 import { LogoComponent } from '../../components/';
 
-const Landing = () => {
+const LandingPage = () => {
   const MotionWrapper = motion(LandingPageWrapper);
 
   return (
@@ -77,4 +77,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default LandingPage;
