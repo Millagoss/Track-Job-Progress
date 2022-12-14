@@ -1,3 +1,4 @@
-import LogoComponent from './Logo/logo.component';
+import Logo from './Logo/logo.component';
+import Button from './Button/Button.component';
 
-export { LogoComponent };
+export { Logo, Button };

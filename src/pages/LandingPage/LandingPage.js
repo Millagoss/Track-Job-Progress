@@ -1,20 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+// MY IMPORTS
 import main from '../../assets/images/main.png';
 import LandingPageWrapper from './LandingPageStyle';
 import {
   scaleElement,
   deScaleElement,
-  handleHoverTransition,
 } from '../../utils/mouseHoverHandle/handleMouseHover';
-import { LogoComponent } from '../../components/';
+import { Logo } from '../../components/';
+import Button from '../../components/Button/Button.component';
 
 const LandingPage = () => {
-  const MotionWrapper = motion(LandingPageWrapper);
+  const LandingPageMotionWrapper = motion(LandingPageWrapper);
 
   return (
-    <MotionWrapper
+    <LandingPageMotionWrapper
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{
@@ -25,7 +27,7 @@ const LandingPage = () => {
       }}
     >
       <nav>
-        <LogoComponent />
+        <Logo />
       </nav>
       <div className='container page'>
         <div className='info'>
@@ -40,27 +42,7 @@ const LandingPage = () => {
             for a tool that will help you achieve your goals, Learning progress
             tracker app is the perfect option for you!
           </p>
-          <motion.button
-            onMouseOver={handleHoverTransition}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              delay: 1.3,
-              default: {
-                duration: 0.3,
-                ease: [0, 0.71, 0.2, 1.01],
-              },
-              scale: {
-                type: 'spring',
-                damping: 9,
-                stiffness: 90,
-                restDelta: 0.001,
-              },
-            }}
-            className='btn btn-hero'
-          >
-            login/Register
-          </motion.button>
+          <Button />
         </div>
         <motion.img
           animate={{ x: 0 }}
@@ -73,7 +55,7 @@ const LandingPage = () => {
           onMouseLeave={deScaleElement}
         />
       </div>
-    </MotionWrapper>
+    </LandingPageMotionWrapper>
   );
 };
 
