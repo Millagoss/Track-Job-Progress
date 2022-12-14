@@ -39,7 +39,7 @@ const ErrorPageWrapper = styled.main`
       background: var(--myPrimary-500);
       border: 1px solid white;
       color: var(--white);
-      box-shadow: 0px 0px 35px 2px var(--myPrimary-800);
+      box-shadow: 0px 5px 25px var(--myPrimary-800);
     }
   }
 `;
