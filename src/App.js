@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { LandingPage, ErrorPage, RegisterPage, DashboardPage } from './pages';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +14,13 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/*' element={<ErrorPage />} />
       </Routes>
+      <ToastContainer
+        position='top-center'
+        autoClose={4000}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+      />
     </BrowserRouter>
   );
 }

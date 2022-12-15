@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import RegisterWrapper from './RegisterPage.style';
 import { FormInput } from '../../components';
 
+import { toast } from 'react-toastify';
+
 const initialState = {
   name: '',
   email: '',
@@ -29,13 +31,13 @@ const RegisterPage = () => {
       !password ||
       (!isMember && !passwordCheck)
     ) {
-      alert('please fill all boxes');
+      toast.error('please fill out all fields');
       return;
     } else if (!isMember && password !== passwordCheck) {
-      alert('password does not match');
+      toast.error('password does not match');
       return;
     }
-    alert('success');
+    toast.success('success');
     setValues(initialState);
   };
 

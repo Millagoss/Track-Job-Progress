@@ -334,6 +334,7 @@ ul {
 
 .Toastify__toast {
   text-transform: capitalize;
+  background: red;
 }
 
 .logo-container {
