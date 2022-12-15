@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import RegisterWrapper from './RegisterPage.style';
 import { FormInput } from '../../components';
-import { handleHoverTransition } from '../../utils/mouseHoverHandle/handleMouseHover';
 
 const initialState = {
   name: '',
   email: '',
   password: '',
+  passwordCheck: '',
   isMember: true,
 };
 
@@ -21,21 +21,43 @@ const RegisterPage = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const { isMember, name, email, password, passwordCheck } = values;
+
+    if (
+      (!isMember && !name) ||
+      !email ||
+      !password ||
+      (!isMember && !passwordCheck)
+    ) {
+      alert('please fill all boxes');
+      return;
+    } else if (!isMember && password !== passwordCheck) {
+      alert('password does not match');
+      return;
+    }
+    alert('success');
+    setValues(initialState);
+  };
+
+  const toggleMember = () => {
+    setValues({ ...values, isMember: !values.isMember });
   };
 
   return (
     <RegisterWrapper className='full-page'>
       <form className='form' onSubmit={handleSubmit}>
         <span className='logo-container'>Learning Progress Tracker</span>
-        <h3>Login</h3>
-        <FormInput
-          type='text'
-          name='name'
-          value={values.name}
-          onChange={handleChange}
-          label='name'
-        />
+        <h3>{values.isMember ? 'Login' : 'Register'} </h3>
+        {!values.isMember && (
+          <FormInput
+            type='text'
+            name='name'
+            value={values.name}
+            onChange={handleChange}
+            label='name'
+          />
+        )}
+
         <FormInput
           type='email'
           name='email'
@@ -50,9 +72,26 @@ const RegisterPage = () => {
           onChange={handleChange}
           label='password'
         />
+        {!values.isMember && (
+          <FormInput
+            type='password'
+            name='passwordCheck'
+            value={values.passwordCheck}
+            onChange={handleChange}
+            label='retype password'
+          />
+        )}
+
         <button type='submit' className='btn btn-block transition'>
           submit
         </button>
+        <p>
+          {values.isMember ? 'Not a member yet?' : 'Already a member'}
+
+          <button type='button' className='member-btn' onClick={toggleMember}>
+            {values.isMember ? 'Register' : 'Login'}
+          </button>
+        </p>
       </form>
     </RegisterWrapper>
   );

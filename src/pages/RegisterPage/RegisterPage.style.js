@@ -69,9 +69,13 @@ const RegisterWrapper = styled.section`
   .member-btn {
     background: transparent;
     border: transparent;
-    color: var(--primary-500);
+    color: var(--myPrimary-500);
     cursor: pointer;
     letter-spacing: var(--letterSpacing);
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;
 export default RegisterWrapper;
