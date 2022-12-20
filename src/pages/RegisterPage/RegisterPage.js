@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import RegisterWrapper from './RegisterPage.style';
 import { FormInput } from '../../components';
 
 import { toast } from 'react-toastify';
+
+import { registerUser, loginUser } from '../../store/features/user/userSlice';
 
 const initialState = {
   name: '',
@@ -15,6 +18,9 @@ const initialState = {
 
 const RegisterPage = () => {
   const [values, setValues] = useState(initialState);
+
+  const dispatch = useDispatch();
+  const { isLoading, user } = useSelector((store) => store.user);
 
   const handleChange = (e) => {
     const element = e.target.name;
@@ -37,7 +43,11 @@ const RegisterPage = () => {
       toast.error('password does not match');
       return;
     }
-    toast.success('success');
+    if (isMember) {
+      dispatch(loginUser({ email, password }));
+      return;
+    }
+    dispatch(registerUser({ name, email, password }));
     setValues(initialState);
   };
 
