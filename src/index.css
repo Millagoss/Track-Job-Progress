@@ -171,7 +171,7 @@ ul {
 }
 .btn:hover {
   background: var(--myPrimary-900);
-  box-shadow: var(--shadow-4);
+  box-shadow: var(--shadow-3);
 }
 .btn-hipster {
   color: var(--primary-500);
@@ -278,9 +278,9 @@ ul {
 .loading {
   width: 6rem;
   height: 6rem;
-  border: 5px solid var(--grey-400);
+  border: 5px solid var(--grey-200);
   border-radius: 50%;
-  border-top-color: var(--primary-500);
+  border-top-color: var(--myPrimary-700);
   animation: spinner 2s linear infinite;
 }
 .loading-center {
@@ -335,6 +335,8 @@ ul {
 .Toastify__toast {
   text-transform: capitalize;
   background: red;
+  width: max-content;
+  max-width: 500px;
 }
 
 .logo-container {
@@ -358,5 +360,5 @@ ul {
 }
 
 .transition {
-  transition: 0.5s ease-in-out all;
+  transition: 0.1s ease-in-out all;
 }

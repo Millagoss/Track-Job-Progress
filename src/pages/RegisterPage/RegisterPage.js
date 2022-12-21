@@ -94,8 +94,12 @@ const RegisterPage = () => {
           />
         )}
 
-        <button type='submit' className='btn btn-block transition'>
-          submit
+        <button
+          type='submit'
+          disabled={isLoading}
+          className='btn btn-block transition'
+        >
+          {isLoading ? 'submitting...' : 'submit'}
         </button>
         <p>
           {values.isMember ? 'Not a member yet?' : 'Already a member'}
