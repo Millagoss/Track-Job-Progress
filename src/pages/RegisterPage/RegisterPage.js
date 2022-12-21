@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import RegisterWrapper from './RegisterPage.style';
 import { FormInput } from '../../components';
@@ -19,9 +20,9 @@ const initialState = {
 
 const RegisterPage = () => {
   const [values, setValues] = useState(initialState);
-
-  const dispatch = useDispatch();
   const { isLoading, user } = useSelector((store) => store.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const element = e.target.name;
@@ -55,6 +56,12 @@ const RegisterPage = () => {
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      user && navigate('/');
+    }, 3000);
+  }, [user]);
 
   return (
     <RegisterWrapper className='full-page'>
