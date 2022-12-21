@@ -20,7 +20,7 @@ const LandingPage = () => {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{
-        delay: 1,
+        delay: 0.5,
         default: {
           duration: 0.9,
         },

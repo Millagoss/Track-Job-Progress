@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { toast } from 'react-toastify';
 
+import customFetch from '../../../utils/axios/axios';
+
 const initialState = {
   user: null,
   isLoading: false,
@@ -10,7 +12,12 @@ const initialState = {
 export const registerUser = createAsyncThunk(
   'user/register-user',
   async (userInfo, thunkApi) => {
-    console.log(userInfo);
+    try {
+      const resp = await customFetch.post('/auth/testingRegister', userInfo);
+      return resp;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 export const loginUser = createAsyncThunk(

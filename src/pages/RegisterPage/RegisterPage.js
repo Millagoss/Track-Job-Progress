@@ -90,7 +90,7 @@ const RegisterPage = () => {
             name='passwordCheck'
             value={values.passwordCheck}
             onChange={handleChange}
-            label='retype password'
+            label='confirm password'
           />
         )}
 
