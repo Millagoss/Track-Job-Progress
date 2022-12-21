@@ -10,6 +10,7 @@ import { registerUser, loginUser } from '../../store/features/user/userSlice';
 
 const initialState = {
   name: '',
+  lastName: '',
   email: '',
   password: '',
   passwordCheck: '',
@@ -29,7 +30,7 @@ const RegisterPage = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { isMember, name, email, password, passwordCheck } = values;
+    const { isMember, name, lastName, email, password, passwordCheck } = values;
 
     if (
       (!isMember && !name) ||
@@ -47,7 +48,7 @@ const RegisterPage = () => {
       dispatch(loginUser({ email, password }));
       return;
     }
-    dispatch(registerUser({ name, email, password }));
+    dispatch(registerUser({ name, lastName, email, password }));
     setValues(initialState);
   };
 
@@ -67,6 +68,15 @@ const RegisterPage = () => {
             value={values.name}
             onChange={handleChange}
             label='name'
+          />
+        )}
+        {!values.isMember && (
+          <FormInput
+            type='text'
+            name='lastName'
+            value={values.lastName}
+            onChange={handleChange}
+            label='last name'
           />
         )}
 

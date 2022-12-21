@@ -4,10 +4,17 @@ import { toast } from 'react-toastify';
 
 import customFetch from '../../../utils/axios/axios';
 
+import {
+  getUserFromLocalStorage,
+  setUserToLocalStorage,
+  removeUserFromLocalStorage,
+} from '../../../utils/localStorage/localStorage';
+
 const initialState = {
-  user: null,
+  user: getUserFromLocalStorage(),
   isLoading: false,
 };
+console.log(initialState);
 
 export const registerUser = createAsyncThunk(
   'user/register-user',
@@ -58,6 +65,7 @@ const userSlice = createSlice({
       state.isLoading = false;
       state.user = user;
       toast.success(`welcome back ${user.name}`);
+      setUserToLocalStorage(user);
     },
     [loginUser.rejected]: (state, { payload }) => {
       state.isLoading = false;

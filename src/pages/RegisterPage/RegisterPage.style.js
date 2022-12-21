@@ -13,7 +13,7 @@ const RegisterWrapper = styled.section`
     border-top: 5px solid var(--myPrimary-500);
 
     .input-container {
-      margin-top: 3rem;
+      margin-top: 2.3rem;
       position: relative;
     }
     .form-input {
