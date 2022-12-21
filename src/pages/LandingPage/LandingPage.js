@@ -57,6 +57,12 @@ const LandingPage = () => {
           onMouseLeave={deScaleElement}
         />
       </div>
+      <motion.div
+        animate={{ y: 0 }}
+        initial={{ y: 500 }}
+        transition={{ delay: 1 }}
+        className='clipPath2'
+      ></motion.div>
     </LandingPageMotionWrapper>
   );
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const RegisterWrapper = styled.section`
   display: grid;
   align-items: center;
+
   .logo {
     display: block;
     margin: 0 auto;

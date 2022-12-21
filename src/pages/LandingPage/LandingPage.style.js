@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 
 const LandingPageWrapper = styled.main`
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  .clipPath2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(8% 26%, 100% 73%, 100% 100%, 0 100%, 0 35%);
+    background: rgb(45, 154, 148, 0.2);
+    z-index: -5;
+  }
   nav {
     width: var(--fluid-width);
     max-width: var(--max-width);

@@ -64,7 +64,7 @@ const RegisterPage = () => {
   }, [user]);
 
   return (
-    <RegisterWrapper className='full-page'>
+    <RegisterWrapper className='full-page shapedividers_com-3444'>
       <form className='form' onSubmit={handleSubmit}>
         <span className='logo-container'>Learning Progress Tracker</span>
         <h3>{values.isMember ? 'Login' : 'Register'} </h3>
