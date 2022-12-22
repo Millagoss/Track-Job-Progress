@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Wrapper = styled.aside`
+const BigSidebarWrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
     display: block;
@@ -62,5 +62,5 @@ const Wrapper = styled.aside`
       color: var(--primary-500);
     }
   }
-`
-export default Wrapper
+`;
+export default BigSidebarWrapper;
