@@ -29,7 +29,6 @@ function App() {
           <Route path='add-jobs' element={<AddJob />} />
           <Route path='profile' element={<Profile />} />
         </Route>
-
         <Route path='/landing' element={<LandingPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/*' element={<ErrorPage />} />

@@ -60,7 +60,7 @@ const RegisterPage = () => {
   useEffect(() => {
     setTimeout(() => {
       user && navigate('/');
-    }, 3000);
+    }, 2000);
   }, [user]);
 
   return (
