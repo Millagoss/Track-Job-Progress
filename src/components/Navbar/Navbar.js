@@ -4,20 +4,28 @@ import { FaAlignLeft, FaCaretDown, FaUserCircle } from 'react-icons/fa';
 
 import { Logo } from '../';
 
+import { toggleSidebar, logoutUser } from '../../store/features/user/userSlice';
+
 import NavbarWrapper from './Navbar.style';
 
 const Navbar = () => {
+  const [showLogout, setShowLogout] = useState(false);
+
   const { user } = useSelector((store) => store.user);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
+
+  const toggle_Sidebar = () => {
+    dispatch(toggleSidebar());
+  };
+
+  const logout_user = () => {
+    dispatch(logoutUser());
+  };
 
   return (
     <NavbarWrapper>
       <div className='nav-center'>
-        <button
-          type='button'
-          className='toggle-btn'
-          onClick={() => console.log('toggle')}
-        >
+        <button type='button' className='toggle-btn' onClick={toggle_Sidebar}>
           <FaAlignLeft />
         </button>
         <div className='logo-text-container'>
@@ -28,17 +36,17 @@ const Navbar = () => {
           <button
             type='button'
             className='btn'
-            onClick={() => console.log('toggleDrpdn')}
+            onClick={() => setShowLogout(!showLogout)}
           >
             <FaUserCircle />
             {user?.name}
             <FaCaretDown />
           </button>
-          <div className='dropdown show-dropdown'>
+          <div className={showLogout ? 'show-dropdown dropdown' : 'dropdown'}>
             <button
               type='button'
               className='dropdown-btn'
-              onClick={() => console.log('logOut user')}
+              onClick={logout_user}
             >
               logOut
             </button>
