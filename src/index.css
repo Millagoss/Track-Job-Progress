@@ -359,13 +359,25 @@ ul {
 }
 .logo {
   /* background: green; */
-  height: 60px;
-  width: 60px;
+  width: 5.2rem;
+  padding: 0 15px;
+  height: 50px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
+@media screen and (max-width: 1125px) {
+  .logo-text {
+    font-size: 1.7rem;
+  }
+  .logo {
+    width: 4.5rem;
+    height: 2.5rem;
+  }
+}
 .transition {
   transition: 0.1s ease-in-out all;
 }

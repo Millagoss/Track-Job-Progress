@@ -13,7 +13,7 @@ const ErrorPage = () => {
         <h3>Ooops!! page not found</h3>
         <p>we can't seem to find te page you're looking for</p>
         <Link to='/'>
-          <button className='btn error-page-btn'>back home</button>
+          <button className='btn error-page-btn'>go back</button>
         </Link>
       </div>
     </ErrorPageWrapper>

@@ -12,11 +12,13 @@ const SmallSidebarWrapper = styled.aside`
     justify-content: center;
     align-items: center;
     z-index: -1;
+    transform: scale(0);
     opacity: 0;
     transition: var(--transition);
   }
   .show-sidebar {
     z-index: 99;
+    transform: scale(1);
     opacity: 1;
   }
   .content {
@@ -57,7 +59,7 @@ const SmallSidebarWrapper = styled.aside`
     color: var(--grey-900);
   }
   .nav-link:hover .icon {
-    color: var(--primary-500);
+    color: var(--myPrimary-500);
   }
   .icon {
     font-size: 1.5rem;
@@ -70,7 +72,7 @@ const SmallSidebarWrapper = styled.aside`
     color: var(--grey-900);
   }
   .active .icon {
-    color: var(--primary-500);
+    color: var(--myPrimary-500);
   }
 `;
 export default SmallSidebarWrapper;

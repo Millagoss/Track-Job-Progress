@@ -28,7 +28,7 @@ const NavbarWrapper = styled.nav`
     background: transparent;
     border-color: transparent;
     font-size: 1.75rem;
-    color: var(--primary-500);
+    color: var(--myPrimary-500);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -72,6 +72,9 @@ const NavbarWrapper = styled.nav`
   .logo-text {
     display: none;
     margin: 0;
+  }
+  .logo {
+    width: 4.5rem;
   }
   @media (min-width: 992px) {
     position: sticky;

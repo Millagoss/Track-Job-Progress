@@ -4,7 +4,11 @@ const BigSidebarWrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
     display: block;
-    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 10px 10px 0px rgba(0, 120, 0, 0.7);
+
+    .logo-text {
+      display: none;
+    }
     .sidebar-container {
       background: var(--white);
       min-height: 100vh;
@@ -46,7 +50,7 @@ const BigSidebarWrapper = styled.aside`
       color: var(--grey-900);
     }
     .nav-link:hover .icon {
-      color: var(--primary-500);
+      color: var(--myPrimary-500);
     }
     .icon {
       font-size: 1.5rem;
@@ -59,7 +63,7 @@ const BigSidebarWrapper = styled.aside`
       color: var(--grey-900);
     }
     .active .icon {
-      color: var(--primary-500);
+      color: var(--myPrimary-500);
     }
   }
 `;
