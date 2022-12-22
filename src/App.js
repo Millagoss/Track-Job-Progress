@@ -16,7 +16,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<SharedLayout />}>
+        <Route
+          path='/'
+          element={
+            <PrivateRoute>
+              <SharedLayout />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<Status />} />
           <Route path='all-jobs' element={<AllJobs />} />
           <Route path='add-jobs' element={<AddJob />} />
