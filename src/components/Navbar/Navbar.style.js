@@ -11,6 +11,13 @@ const NavbarWrapper = styled.nav`
     align-items: center;
     width: 100px;
   }
+  .logo-text-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .nav-center {
     display: flex;
     width: 90vw;
