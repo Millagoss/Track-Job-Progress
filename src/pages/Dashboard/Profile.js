@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import { FormInput } from '../../components';
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
+import { updateUser } from '../../store/features/user/userSlice';
+
 const Profile = () => {
   const { isLoading, user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
@@ -25,6 +27,8 @@ const Profile = () => {
       toast.error('please fill out all fields');
       return;
     }
+
+    dispatch(updateUser({ name, lastName, email, location }));
   };
 
   const handleChange = (e) => {
