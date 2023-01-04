@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FormInput = ({ type, name, value, onChange, label }) => {
+const FormInput = ({ type, name, value, onChange, label, addClass = '' }) => {
   return (
     <div className='input-container'>
       <input
@@ -8,7 +8,11 @@ const FormInput = ({ type, name, value, onChange, label }) => {
         name={name}
         value={value}
         onChange={onChange}
-        className='form-input'
+        className={
+          addClass
+            ? `${value ? 'input-move-out' : 'input-move-in'} form-input`
+            : 'form-input '
+        }
       />
       <label
         htmlFor={name}
