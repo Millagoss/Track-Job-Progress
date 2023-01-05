@@ -2,13 +2,17 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { toast } from 'react-toastify';
 
-import customFetch from '../../../utils/axios/axios';
-
 import {
   getUserFromLocalStorage,
   setUserToLocalStorage,
   removeUserFromLocalStorage,
 } from '../../../utils/localStorage/localStorage';
+
+import {
+  loginUserThunk,
+  registerUserThunk,
+  updateUserInfoThunk,
+} from './userThunk';
 
 const initialState = {
   user: getUserFromLocalStorage(),
@@ -19,44 +23,20 @@ const initialState = {
 export const registerUser = createAsyncThunk(
   'user/register-user',
   async (userInfo, thunkApi) => {
-    try {
-      const resp = await customFetch.post('/auth/register', userInfo);
-      return resp.data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.response.data);
-    }
+    return registerUserThunk('/auth/register', userInfo, thunkApi);
   }
 );
 export const loginUser = createAsyncThunk(
   'user/login-user',
   async (userInfo, thunkApi) => {
-    try {
-      const resp = await customFetch.post('/auth/login', userInfo);
-      return resp.data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.response.data.msg);
-    }
+    return loginUserThunk('/auth/login', userInfo, thunkApi);
   }
 );
 
 export const updateUser = createAsyncThunk(
   'user/update-user',
   async (userInfo, thunkApi) => {
-    try {
-      const resp = await customFetch.patch('/auth/updateUser', userInfo, {
-        headers: {
-          authorization: `Bearer ${thunkApi.getState().user.user.token}`,
-        },
-      });
-      return resp.data;
-    } catch (error) {
-      if (error.response.status === 401) {
-        toast.error('UNauthorized request! Logging out...');
-        thunkApi.dispatch(logoutUser());
-        return;
-      }
-      return thunkApi.rejectWithValue(error.response.data.msg);
-    }
+    return updateUserInfoThunk('/auth/updateUser', userInfo, thunkApi);
   }
 );
 
@@ -80,8 +60,8 @@ const userSlice = createSlice({
     [registerUser.fulfilled]: (state, { payload }) => {
       const { user } = payload;
       state.isLoading = false;
-      state.user = user;
-      toast.success(`Hello ${user.name}`);
+      // state.user = user;
+      toast.success(`Hello ${user.name}, please login with your account`);
     },
     [registerUser.rejected]: (state, { payload }) => {
       state.isLoading = false;
