@@ -6,6 +6,7 @@ import { FormInput } from '../../components';
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
 import { updateUser } from '../../store/features/user/userSlice';
+import { motion } from 'framer-motion';
 
 const Profile = () => {
   const { isLoading, user } = useSelector((store) => store.user);
@@ -38,8 +39,25 @@ const Profile = () => {
     setUserData({ ...userData, [name]: value });
   };
 
+  const ProfilePageMotionWrapper = motion(DashboardFormWrapper);
+
   return (
-    <DashboardFormWrapper>
+    <ProfilePageMotionWrapper
+      animate={{
+        opacity: 1,
+        marginLeft: 0,
+      }}
+      initial={{
+        opacity: 0,
+        marginLeft: '1.5rem',
+      }}
+      transition={{
+        delay: 0.2,
+        default: {
+          duration: 0.5,
+        },
+      }}
+    >
       <form className='form' onSubmit={handleSubmit}>
         <h3>profile</h3>
         <div className='form-center'>
@@ -80,7 +98,7 @@ const Profile = () => {
           </button>
         </div>
       </form>
-    </DashboardFormWrapper>
+    </ProfilePageMotionWrapper>
   );
 };
 
