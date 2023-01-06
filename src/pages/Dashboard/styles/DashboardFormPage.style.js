@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const DashboardFormWrapper = styled.section`
   border-radius: var(--borderRadius);
   width: 100%;
+  /* height: 500px; */
   /* background: var(--white); */
   padding: 3rem 2rem 4rem;
   /* box-shadow: 0px 20px 20px 10px var(--white); */
@@ -50,9 +51,11 @@ const DashboardFormWrapper = styled.section`
     padding: 0;
     max-width: 100%;
     width: 100%;
+    height: auto;
     background: inherit;
 
     .form-center {
+      height: fit-content;
     }
     .input-container {
       margin-top: 2.3rem;
@@ -101,6 +104,17 @@ const DashboardFormWrapper = styled.section`
       border: 1px rgba(255, 200, 210, 0.9) solid;
     }
 
+    .form-select {
+      width: 70;
+      color: var(--grey-700);
+    }
+    select:hover {
+      background: var(--grey-100);
+    }
+
+    .form-label {
+      margin: 0;
+    }
     .form-input-label {
       font-size: 22px;
       font-family: var(--headingFont);
@@ -116,12 +130,19 @@ const DashboardFormWrapper = styled.section`
   }
   /* ///////// */
 
+  .btn-container {
+    display: flex;
+    justify-content: end;
+    gap: 3em;
+    height: auto;
+    width: 70%;
+    margin-top: 5rem;
+  }
+
   .btn-submit {
-    width: 15rem;
+    width: 12rem;
     height: 2.5rem;
     letter-spacing: 2px;
-    margin-top: 50px;
-    margin-left: 70px;
     border-radius: 0;
 
     :hover {
@@ -132,8 +153,14 @@ const DashboardFormWrapper = styled.section`
 
   .clear-btn {
     background: var(--grey-500);
+    border-radius: 0;
+    width: 12rem;
+    height: 2.5rem;
   }
+
   .clear-btn:hover {
+    outline: 0.5px var(--grey-200) solid;
+    outline-offset: 4px;
     background: var(--black);
   }
   @media (min-width: 992px) {
@@ -142,8 +169,17 @@ const DashboardFormWrapper = styled.section`
       align-items: center;
       column-gap: 1rem;
     }
+    .btn-submit,
+    .clear-btn {
+      width: 15rem;
+    }
     .btn-container {
-      margin-top: 0;
+      display: flex;
+      justify-content: end;
+      gap: 3rem;
+      margin-top: 5rem;
+      width: 70%;
+      /* background: red; */
     }
   }
   @media (min-width: 1120px) {

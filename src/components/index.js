@@ -4,5 +4,14 @@ import FormInput from './Form-row/FormRow.component';
 import SmallSidebar from './SmallSidebar/SmallSidebar';
 import BigSidebar from './BigSidebar/BigSidebar';
 import Navbar from './Navbar/Navbar';
+import FormSelectRow from './Form-row-select/FormRowSelect.component';
 
-export { Logo, Button, FormInput, SmallSidebar, BigSidebar, Navbar };
+export {
+  Logo,
+  Button,
+  FormSelectRow,
+  FormInput,
+  SmallSidebar,
+  BigSidebar,
+  Navbar,
+};
