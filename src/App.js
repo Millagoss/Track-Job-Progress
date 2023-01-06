@@ -25,8 +25,8 @@ function App() {
           }
         >
           <Route index element={<Status />} />
-          <Route path='all-jobs' element={<AllJobs />} />
-          <Route path='add-job' element={<AddJob />} />
+          <Route path='all-courses' element={<AllJobs />} />
+          <Route path='add-course' element={<AddJob />} />
           <Route path='profile' element={<Profile />} />
         </Route>
         <Route path='/landing' element={<LandingPage />} />
