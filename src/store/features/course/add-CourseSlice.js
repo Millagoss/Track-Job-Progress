@@ -17,10 +17,11 @@ const addCourseSlice = createSlice({
   name: 'add-Course',
   initialState,
   reducers: {
-    addCourse: (state) => {
+    changeHandler: (state) => {
       console.log(state);
     },
   },
 });
 
 export default addCourseSlice.reducer;
+export const { changeHandler } = addCourseSlice.actions;

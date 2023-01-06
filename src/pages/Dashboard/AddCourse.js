@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { FormInput, FormSelectRow } from '../../components';
 
@@ -36,22 +36,20 @@ const AddJob = () => {
     console.log(name, value);
   };
 
-  const AddCoursePageMotionWrapper = motion(DashboardFormWrapper);
-
   return (
-    <AddCoursePageMotionWrapper
+    <DashboardFormWrapper
       initial={{
         opacity: 0,
-        marginLeft: '1.5rem',
+        marginLeft: '2rem',
       }}
       animate={{
         opacity: 1,
         marginLeft: 0,
       }}
       transition={{
-        delay: 0.2,
+        delay: 0.1,
         default: {
-          duration: 0.5,
+          duration: 0.2,
         },
       }}
     >
@@ -115,7 +113,7 @@ const AddJob = () => {
           </div>
         </div>
       </form>
-    </AddCoursePageMotionWrapper>
+    </DashboardFormWrapper>
   );
 };
 

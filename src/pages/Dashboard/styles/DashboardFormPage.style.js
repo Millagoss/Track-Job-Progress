@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const DashboardFormWrapper = styled.section`
+const DashboardFormWrapper = styled(motion.section)`
   border-radius: var(--borderRadius);
   width: 100%;
+  padding: 3rem 2rem 4rem;
   /* height: 500px; */
   /* background: var(--white); */
-  padding: 3rem 2rem 4rem;
   /* box-shadow: 0px 20px 20px 10px var(--white); */
   h3 {
     margin-top: 0;
@@ -128,7 +129,6 @@ const DashboardFormWrapper = styled.section`
       transition: 300ms ease-in-out all;
     }
   }
-  /* ///////// */
 
   .btn-container {
     display: flex;
@@ -151,6 +151,9 @@ const DashboardFormWrapper = styled.section`
     }
   }
 
+  .profile-page-btn {
+    margin-top: 3rem;
+  }
   .clear-btn {
     background: var(--grey-500);
     border-radius: 0;
@@ -173,22 +176,22 @@ const DashboardFormWrapper = styled.section`
     .clear-btn {
       width: 15rem;
     }
+
     .btn-container {
       display: flex;
       justify-content: end;
       gap: 3rem;
       margin-top: 5rem;
       width: 70%;
-      /* background: red; */
     }
   }
   @media (min-width: 1120px) {
     .form-center {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    .form-center button {
+    /* .form-center button {
       margin-top: 0;
-    }
+    } */
   }
 `;
 
