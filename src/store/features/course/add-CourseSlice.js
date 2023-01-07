@@ -17,8 +17,9 @@ const addCourseSlice = createSlice({
   name: 'add-Course',
   initialState,
   reducers: {
-    changeHandler: (state) => {
-      console.log(state);
+    changeHandler: (state, { payload }) => {
+      const { name, value } = payload;
+      state[name] = value;
     },
   },
 });

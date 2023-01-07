@@ -1,13 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { AnimatePresence, motion } from 'framer-motion';
 
 import { FormInput, FormSelectRow } from '../../components';
 
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
+import { changeHandler } from '../../store/features/course/add-CourseSlice';
+
 const AddJob = () => {
+  const dispatch = useDispatch();
+
   const {
     isLoading,
     position,
@@ -30,10 +33,10 @@ const AddJob = () => {
     }
   };
 
-  const handleJobInput = (e) => {
+  const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
+    dispatch(changeHandler({ name, value }));
   };
 
   return (
@@ -60,26 +63,29 @@ const AddJob = () => {
             type='text'
             name='position'
             value={position}
-            onChange={handleJobInput}
+            onChange={handleInput}
             label='position'
+            addClass='move'
           />
           <FormInput
             type='text'
             name='company'
-            value={position}
-            onChange={handleJobInput}
+            value={company}
+            onChange={handleInput}
             label='company'
+            addClass='move'
           />
           <FormInput
             type='text'
             name='jobLocation'
-            value={position}
-            onChange={handleJobInput}
+            value={jobLocation}
+            onChange={handleInput}
             label='job-location'
+            addClass='move'
           />
 
           <FormSelectRow
-            onChange={handleJobInput}
+            onChange={handleInput}
             status={status}
             statusOptions={statusOptions}
             labelText='status'
@@ -87,7 +93,7 @@ const AddJob = () => {
           />
 
           <FormSelectRow
-            onChange={handleJobInput}
+            onChange={handleInput}
             status={jobType}
             statusOptions={jobTypeOptions}
             labelText='Job type'

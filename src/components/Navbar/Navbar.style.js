@@ -89,6 +89,12 @@ const NavbarWrapper = styled.nav`
     }
     .logo-text {
       display: block;
+      font-size: 1.9rem;
+    }
+  }
+  @media (max-width: 1120px) {
+    .logo-text {
+      font-size: 1.6rem;
     }
   }
 `;

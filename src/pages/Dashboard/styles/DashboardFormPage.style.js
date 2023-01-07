@@ -10,6 +10,7 @@ const DashboardFormWrapper = styled(motion.section)`
   /* box-shadow: 0px 20px 20px 10px var(--white); */
   h3 {
     margin-top: 0;
+    color: var(--grey-700);
   }
 
   /* .form {
@@ -89,7 +90,7 @@ const DashboardFormWrapper = styled(motion.section)`
       }
     }
     .move-out {
-      left: -45px;
+      left: -38px;
       top: 4px;
     }
     .move-in {
@@ -98,8 +99,12 @@ const DashboardFormWrapper = styled(motion.section)`
     }
 
     .input-move-out {
-      margin-left: 70px;
+      margin-left: 95px;
       box-shadow: 0px 14px 9px 3px rgba(159, 209, 207, 0.1);
+
+      .form-input-label {
+        font-size: 10px;
+      }
     }
     .input-move-in {
       border: 1px rgba(255, 200, 210, 0.9) solid;
@@ -117,7 +122,7 @@ const DashboardFormWrapper = styled(motion.section)`
       margin: 0;
     }
     .form-input-label {
-      font-size: 22px;
+      font-size: 20px;
       font-family: var(--headingFont);
       font-weight: 100;
       letter-spacing: 1.2px;
@@ -125,7 +130,6 @@ const DashboardFormWrapper = styled(motion.section)`
       position: absolute;
       pointer-events: none;
       text-transform: capitalize;
-
       transition: 300ms ease-in-out all;
     }
   }

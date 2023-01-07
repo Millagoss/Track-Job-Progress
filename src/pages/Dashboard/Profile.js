@@ -35,7 +35,6 @@ const Profile = () => {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-
     setUserData({ ...userData, [name]: value });
   };
 
@@ -57,7 +56,7 @@ const Profile = () => {
         transition={{
           delay: 0.1,
           default: {
-            duration: 0.8,
+            duration: 0.2,
           },
         }}
       >
