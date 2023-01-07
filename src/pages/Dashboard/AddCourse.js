@@ -6,7 +6,10 @@ import { FormInput, FormSelectRow } from '../../components';
 
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
-import { changeHandler } from '../../store/features/course/add-CourseSlice';
+import {
+  changeHandler,
+  clearForm,
+} from '../../store/features/course/add-CourseSlice';
 
 const AddJob = () => {
   const dispatch = useDispatch();
@@ -104,7 +107,7 @@ const AddJob = () => {
             <button
               type='button'
               className='btn clear-btn'
-              onClick={() => console.log('ola')}
+              onClick={() => dispatch(clearForm())}
             >
               clear
             </button>

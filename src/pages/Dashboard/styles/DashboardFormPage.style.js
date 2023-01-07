@@ -3,61 +3,36 @@ import { motion } from 'framer-motion';
 
 const DashboardFormWrapper = styled(motion.section)`
   border-radius: var(--borderRadius);
-  width: 100%;
-  padding: 3rem 2rem 4rem;
-  /* height: 500px; */
-  /* background: var(--white); */
-  /* box-shadow: 0px 20px 20px 10px var(--white); */
+  width: 70vw;
+  padding: 3rem 2rem 4rem 5rem;
+  background: var(--grey-50);
+  box-shadow: 0px 10px 30px 20px var(--grey-100);
+  /* border-radius: 25px 50px 10% 10% / 23% 25% 25% 25%; */
+  /* width: 0; */
+  /* height: 0; */
+  border-style: solid;
+  border-width: 50px 70px 0px 0;
+  border-color: var(--myPrimary-600) transparent transparent green;
+  /* z-index: -500; */
+
   h3 {
     margin-top: 0;
     color: var(--grey-700);
   }
-
-  /* .form {
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    max-width: 100%;
-    width: 100%;
-  }
-  .form-row {
-    margin-bottom: 0;
-  }
-  .form-center {
-    display: grid;
-    row-gap: 0.5rem;
-  }
-  .form-center button {
-    align-self: end;
-    height: 35px;
-    margin-top: 1rem;
-  }
-  .btn-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
-    align-self: flex-end;
-    margin-top: 0.5rem;
-    button {
-      height: 35px;
-    }
-  } */
-
-  /* //////////// */
-
   .form {
     margin: 0;
     border-radius: 0;
     box-shadow: none;
     padding: 0;
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
     height: auto;
     background: inherit;
 
     .form-center {
       height: fit-content;
+      width: 100%;
+      /* background: red; */
     }
     .input-container {
       margin-top: 2.3rem;
@@ -76,13 +51,13 @@ const DashboardFormWrapper = styled(motion.section)`
       font-size: 18px;
       padding: 10px 10px 10px 20px;
       display: block;
-      width: 70%;
+      width: 80%;
       height: 42px;
       border: none;
       /* border-bottom: 5px solid var(--grey-200); */
       margin: 25px 0;
       letter-spacing: 0.5px;
-      transition: 0.1s all ease-in-out;
+      transition: 200ms all ease-out;
 
       :focus {
         outline: none;
@@ -111,7 +86,7 @@ const DashboardFormWrapper = styled(motion.section)`
     }
 
     .form-select {
-      width: 70;
+      width: 100%;
       color: var(--grey-700);
     }
     select:hover {
@@ -139,7 +114,7 @@ const DashboardFormWrapper = styled(motion.section)`
     justify-content: end;
     gap: 3em;
     height: auto;
-    width: 70%;
+    width: 100%;
     margin-top: 5rem;
   }
 
@@ -180,12 +155,17 @@ const DashboardFormWrapper = styled(motion.section)`
     .clear-btn {
       width: 15rem;
     }
-
     .btn-container {
       display: flex;
       justify-content: end;
       gap: 3rem;
       margin-top: 5rem;
+      width: 70%;
+    }
+    .form-input {
+      width: 80%;
+    }
+    .form-row {
       width: 70%;
     }
   }

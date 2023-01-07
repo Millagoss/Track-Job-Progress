@@ -6,6 +6,8 @@ const SharedLayoutWrapper = styled.section`
     grid-template-columns: 1fr;
   }
   .dashboard-page {
+    display: flex;
+    justify-content: center;
     width: 90vw;
     margin: 0 auto;
     padding: 2rem 0;

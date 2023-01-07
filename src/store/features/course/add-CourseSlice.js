@@ -21,8 +21,11 @@ const addCourseSlice = createSlice({
       const { name, value } = payload;
       state[name] = value;
     },
+    clearForm: () => {
+      return { ...initialState };
+    },
   },
 });
 
 export default addCourseSlice.reducer;
-export const { changeHandler } = addCourseSlice.actions;
+export const { changeHandler, clearForm } = addCourseSlice.actions;
