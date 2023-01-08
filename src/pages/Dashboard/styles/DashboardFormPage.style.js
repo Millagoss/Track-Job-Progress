@@ -16,7 +16,7 @@ const DashboardFormWrapper = styled(motion.section)`
   /* z-index: -500; */
 
   h3 {
-    margin-top: 0;
+    margin-bottom: 3rem;
     color: var(--grey-700);
   }
   .form {
@@ -30,83 +30,84 @@ const DashboardFormWrapper = styled(motion.section)`
     background: inherit;
 
     .form-center {
-      height: fit-content;
+      display: grid;
       width: 100%;
-      /* background: red; */
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
     }
     .input-container {
-      margin-top: 2.3rem;
+      display: flex;
+      flex-direction: column;
       position: relative;
     }
-    .form-input {
-      background: linear-gradient(
-        190deg,
-        rgb(240, 244, 248) 0%,
-        rgba(253, 247, 247, 1) 35%,
-        rgba(255, 255, 255, 1) 100%
-      );
-
-      font-family: var(--bodyFont);
-      color: var(--grey-500);
-      font-size: 18px;
-      padding: 10px 10px 10px 20px;
-      display: block;
-      width: 80%;
-      height: 42px;
-      border: none;
-      /* border-bottom: 5px solid var(--grey-200); */
-      margin: 25px 0;
-      letter-spacing: 0.5px;
-      transition: 200ms all ease-out;
-
-      :focus {
-        outline: none;
-        box-shadow: 0px 5px 15px 3px rgba(159, 209, 207, 0.7);
-      }
-    }
-    .move-out {
-      left: -38px;
-      top: 4px;
-    }
-    .move-in {
-      left: 22px;
-      top: 4px;
-    }
-
-    .input-move-out {
-      margin-left: 95px;
-      box-shadow: 0px 14px 9px 3px rgba(159, 209, 207, 0.1);
-
-      .form-input-label {
-        font-size: 10px;
-      }
-    }
-    .input-move-in {
-      border: 1px rgba(255, 200, 210, 0.9) solid;
-    }
-
-    .form-select {
-      width: 100%;
-      color: var(--grey-700);
-    }
-    select:hover {
-      background: var(--grey-100);
-    }
-
-    .form-label {
-      margin: 0;
-    }
     .form-input-label {
-      font-size: 20px;
+      font-size: 1rem;
       font-family: var(--headingFont);
       font-weight: 100;
+      text-align: end;
       letter-spacing: 1.2px;
       color: var(--grey-500);
       position: absolute;
       pointer-events: none;
       text-transform: capitalize;
-      transition: 300ms ease-in-out all;
+      transition: 200ms ease-in-out all;
     }
+  }
+  .move-out {
+    /* font-size: 1rem; */
+    /* position: absolute; */
+    left: 5px;
+    top: -55px;
+  }
+  .form-input {
+    background: linear-gradient(
+      225deg,
+      rgb(240, 244, 248) 0%,
+      rgba(253, 247, 247, 1) 35%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+    font-family: var(--bodyFont);
+    color: var(--grey-500);
+    font-size: 18px;
+    padding: 10px 10px 10px 20px;
+    display: block;
+    width: 80%;
+    height: 42px;
+    border: none;
+    /* border-width: 1px 0 1px 1px; */
+    letter-spacing: 0.5px;
+    transition: 200ms all ease-out;
+
+    :focus {
+      outline: none;
+      box-shadow: 0px 5px 15px 3px rgba(159, 209, 207, 0.7);
+    }
+  }
+  .move-out {
+    left: 5px;
+    top: -25px;
+  }
+  .move-in {
+    left: 25px;
+    top: 8px;
+  }
+
+  .red-border {
+    border: 1px rgba(255, 200, 220, 1) solid;
+    /* box-shadow: 0 0 10px 5px rgba(255, 200, 210, 0.7); */
+  }
+
+  .form-select {
+    width: 60%;
+    color: var(--grey-700);
+  }
+  select:hover {
+    background: var(--grey-100);
+  }
+
+  .form-label {
+    margin: 0;
   }
 
   .btn-container {
@@ -166,7 +167,7 @@ const DashboardFormWrapper = styled(motion.section)`
       width: 80%;
     }
     .form-row {
-      width: 70%;
+      width: 80%;
     }
   }
   @media (min-width: 1120px) {

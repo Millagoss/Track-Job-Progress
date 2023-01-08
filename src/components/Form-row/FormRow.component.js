@@ -8,15 +8,11 @@ const FormInput = ({ type, name, value, onChange, label, addClass = '' }) => {
         name={name}
         value={value}
         onChange={onChange}
-        className={
-          addClass
-            ? `${value ? 'input-move-out' : 'input-move-in'} form-input`
-            : 'form-input '
-        }
+        className={`${!value && 'red-border'} form-input`}
       />
       <label
         htmlFor={name}
-        className={`${value ? 'move-out' : 'move-in'} form-input-label`}
+        className={`${value ? 'move-out' : 'move-in'} form-input-label `}
       >
         {label}
       </label>

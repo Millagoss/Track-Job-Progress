@@ -5,7 +5,7 @@ const BigSidebarWrapper = styled.aside`
   @media (min-width: 992px) {
     display: block;
     box-shadow: 1px 10px 20px 0px rgba(0, 120, 0, 0.5);
-
+    z-index: 1;
     .logo-text {
       display: none;
     }
