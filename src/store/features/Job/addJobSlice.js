@@ -17,10 +17,10 @@ const initialState = {
 };
 
 export const addJob = createAsyncThunk(
-  'course/addCourse',
-  async (courseInfo, thunkApi) => {
+  'course/addJob',
+  async (JobInfo, thunkApi) => {
     try {
-      const resp = await customFetch.post('/jobs', courseInfo, {
+      const resp = await customFetch.post('/jobs', JobInfo, {
         headers: {
           authorization: `Bearer ${thunkApi.getState().user.user.token}`,
         },
@@ -29,7 +29,7 @@ export const addJob = createAsyncThunk(
       return resp.data;
     } catch (error) {
       if (error.response.status === 401) {
-        toast.error('ANauthorized request!! Logging out...');
+        toast.error('UNauthorized request!! Logging out...');
         thunkApi.dispatch(logoutUser());
         return;
       }
@@ -38,8 +38,8 @@ export const addJob = createAsyncThunk(
   }
 );
 
-const addCourseSlice = createSlice({
-  name: 'add-Course',
+const addJobSlice = createSlice({
+  name: 'add-Job',
   initialState,
   reducers: {
     changeHandler: (state, { payload }) => {
@@ -65,5 +65,5 @@ const addCourseSlice = createSlice({
   },
 });
 
-export default addCourseSlice.reducer;
-export const { changeHandler, clearForm } = addCourseSlice.actions;
+export default addJobSlice.reducer;
+export const { changeHandler, clearForm } = addJobSlice.actions;

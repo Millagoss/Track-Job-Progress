@@ -3,13 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { FormInput, FormSelectRow } from '../../components';
-import { addJob } from '../../store/features/course/add-CourseSlice';
+import { addJob } from '../../store/features/Job/addJobSlice';
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
-import {
-  changeHandler,
-  clearForm,
-} from '../../store/features/course/add-CourseSlice';
+import { changeHandler, clearForm } from '../../store/features/Job/addJobSlice';
 
 const AddJob = () => {
   const dispatch = useDispatch();
@@ -25,7 +22,7 @@ const AddJob = () => {
     statusOptions,
     isEditing,
     editJobId,
-  } = useSelector((store) => store.addCourse);
+  } = useSelector((store) => store.addJob);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +30,6 @@ const AddJob = () => {
       toast.error('please fill out all fields');
       return;
     }
-    console.log('my name');
     dispatch(addJob({ position, company, jobLocation, status, jobType }));
   };
 

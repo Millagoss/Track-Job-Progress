@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import userSlice from './features/user/userSlice';
-import addCourseSlice from './features/course/add-CourseSlice';
+import addJobSlice from './features/Job/addJobSlice';
 
 const store = configureStore({
   reducer: {
     user: userSlice,
-    addCourse: addCourseSlice,
+    addJob: addJobSlice,
   },
 });
 

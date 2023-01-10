@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { LandingPage, ErrorPage, RegisterPage, PrivateRoute } from './pages';
 
 import {
-  AddCourse,
+  AddJob,
   AllJobs,
   Profile,
   Status,
@@ -25,8 +25,8 @@ function App() {
           }
         >
           <Route index element={<Status />} />
-          <Route path='all-courses' element={<AllJobs />} />
-          <Route path='add-course' element={<AddCourse />} />
+          <Route path='all-Jobs' element={<AllJobs />} />
+          <Route path='add-Job' element={<AddJob />} />
           <Route path='profile' element={<Profile />} />
         </Route>
         <Route path='/landing' element={<LandingPage />} />
