@@ -75,13 +75,17 @@ const DashboardFormWrapper = styled(motion.section)`
     width: 80%;
     height: 42px;
     border: none;
-    /* border-width: 1px 0 1px 1px; */
+    outline: none;
+    outline: 1px rgba(217, 226, 236, 0.2) inset;
+    border-width: 1px 0 1px 1px;
     letter-spacing: 0.5px;
     transition: 200ms all ease-out;
 
     :focus {
-      outline: none;
-      box-shadow: 0px 5px 15px 3px rgba(159, 209, 207, 0.7);
+      outline-style: inset;
+      outline-color: rgba(159, 209, 207, 0.2);
+      outline-width: 1px;
+      box-shadow: 0px 5px 5px 3px rgba(159, 209, 207, 0.7);
     }
   }
   .move-out {
@@ -94,8 +98,9 @@ const DashboardFormWrapper = styled(motion.section)`
   }
 
   .red-border {
-    border: 1px rgba(255, 200, 220, 1) solid;
-    /* box-shadow: 0 0 10px 5px rgba(255, 200, 210, 0.7); */
+    /* outline-offset: 5px; */
+    outline: 1px rgba(255, 200, 220, 0.5) inset;
+    box-shadow: 0 10px 10px 0px rgba(255, 200, 210, 1);
   }
 
   .form-select {

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { FormInput, FormSelectRow } from '../../components';
-
+import { addJob } from '../../store/features/course/add-CourseSlice';
 import DashboardFormWrapper from './styles/DashboardFormPage.style';
 
 import {
@@ -29,11 +29,12 @@ const AddJob = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!position || !company || !jobLocation) {
       toast.error('please fill out all fields');
       return;
     }
+    console.log('my name');
+    dispatch(addJob({ position, company, jobLocation, status, jobType }));
   };
 
   const handleInput = (e) => {
@@ -117,7 +118,7 @@ const AddJob = () => {
               onClick={handleSubmit}
               disabled={isLoading}
             >
-              {isLoading ? 'loading' : 'submit'}
+              {isLoading ? 'loading...' : 'submit'}
             </button>
           </div>
         </div>
