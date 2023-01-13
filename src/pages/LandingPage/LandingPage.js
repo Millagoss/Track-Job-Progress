@@ -32,7 +32,7 @@ const LandingPage = () => {
       <div className='container page'>
         <div className='info'>
           <h1>
-            Learning <span>Progress Tracker</span> app
+            Job <span>Progress Tracker</span> app
           </h1>
           <p>
             Learning progress tracker app is a great tool that can help you

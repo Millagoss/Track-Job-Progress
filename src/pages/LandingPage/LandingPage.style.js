@@ -30,9 +30,12 @@ const LandingPageWrapper = styled.main`
     overflow: hidden;
   }
   h1 {
+    width: 20rem;
+    font-size: 3.5rem;
     font-weight: 700;
     span {
       color: var(--myPrimary-700);
+      text-decoration: underline;
     }
   }
   p {
@@ -44,16 +47,31 @@ const LandingPageWrapper = styled.main`
     display: none;
     z-index: 300;
   }
-  @media (min-width: 992px) {
+
+  @media only screen and (max-width: 991px) {
+    .info {
+      h1 {
+        width: fit-content;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--black);
+        span {
+          color: var(--myPrimary-700);
+          text-decoration: none;
+        }
+      }
+    }
+    p {
+      letter-spacing: 1px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
     .page {
       grid-template-columns: 1fr 1fr;
       column-gap: 3rem;
       .info {
         padding: 10px;
-
-        span {
-          text-decoration: underline;
-        }
       }
     }
     .main-img {

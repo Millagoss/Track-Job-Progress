@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <div className='logo-container'>
       <img src={logo} alt='TLP' className='logo' />
-      <span className='logo-text'>&nbsp; Track Learning Progress</span>
+      <span className='logo-text'>&nbsp; Track Job Progress</span>
     </div>
   );
 };
