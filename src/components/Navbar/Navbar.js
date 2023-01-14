@@ -30,11 +30,10 @@ const Navbar = () => {
     <NavbarWrapper>
       <div className='nav-center'>
         <button type='button' className='toggle-btn' onClick={toggle_Sidebar}>
-          {/* <FaArrowLeft className={rotate && 'full-rotate'} /> */}
           {isSidebarOpen ? (
-            <FaArrowLeft className={isSidebarOpen && 'rotate-left'} />
+            <FaArrowLeft className={isSidebarOpen && 'rotate-left scale'} />
           ) : (
-            <FaAlignLeft className={!isSidebarOpen && 'rotate-right'} />
+            <FaAlignLeft className={!isSidebarOpen && 'rotate-right scale'} />
           )}
         </button>
         <div className='logo-text-container'>

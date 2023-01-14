@@ -1,44 +1,50 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const DashboardFormWrapper = styled(motion.section)`
+const ProfileWrapper = styled(motion.section)`
   border-radius: var(--borderRadius);
-  width: 70vw;
-  padding: 3rem 2rem 4rem 5rem;
+  width: 80%;
+  padding: 3rem 2rem 4rem 2rem;
   background: var(--grey-50);
   box-shadow: 0px 10px 30px 20px var(--grey-100);
-  /* border-radius: 25px 50px 10% 10% / 23% 25% 25% 25%; */
-  /* width: 0; */
-  /* height: 0; */
   border-style: solid;
   border-width: 50px 70px 0px 0;
   border-color: var(--myPrimary-600) transparent transparent green;
-  /* z-index: -500; */
+
+  @media (max-width: 1230px) {
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .form-center {
+      display: grid;
+      align-items: center;
+      column-gap: 1rem;
+      width: 100%;
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
+      overflow: hidden;
+    }
+  }
 
   h3 {
     margin-bottom: 3rem;
     color: var(--grey-700);
   }
   .form {
-    margin: 0;
     border-radius: 0;
     box-shadow: none;
     padding: 0;
-    width: 100%;
+    width: 400px;
     max-width: 100%;
     height: auto;
     background: inherit;
 
-    .form-center {
-      display: grid;
-      width: 100%;
-      grid-template-columns: 1fr;
-      row-gap: 2.5rem;
-    }
     .input-container {
       display: flex;
       flex-direction: column;
       position: relative;
+      width: 100%;
     }
     .form-input-label {
       font-size: 1rem;
@@ -54,8 +60,6 @@ const DashboardFormWrapper = styled(motion.section)`
     }
   }
   .move-out {
-    /* font-size: 1rem; */
-    /* position: absolute; */
     left: 5px;
     top: -55px;
   }
@@ -63,7 +67,7 @@ const DashboardFormWrapper = styled(motion.section)`
     background: linear-gradient(
       225deg,
       rgb(240, 244, 248) 0%,
-      rgba(253, 247, 247, 1) 35%,
+      rgba(253, 247, 247, 1) 55%,
       rgba(255, 255, 255, 1) 100%
     );
 
@@ -72,10 +76,9 @@ const DashboardFormWrapper = styled(motion.section)`
     font-size: 18px;
     padding: 10px 10px 10px 20px;
     display: block;
-    width: 80%;
+    width: 100%;
     height: 42px;
     border: none;
-    outline: none;
     outline: 1px rgba(217, 226, 236, 0.2) inset;
     border-width: 1px 0 1px 1px;
     letter-spacing: 0.5px;
@@ -98,11 +101,12 @@ const DashboardFormWrapper = styled(motion.section)`
   }
 
   .red-border {
-    /* outline-offset: 5px; */
     outline: 1px rgba(255, 200, 220, 0.5) inset;
     box-shadow: 0 10px 10px 0px rgba(255, 200, 210, 1);
   }
-
+  .form-row {
+    width: 80%;
+  }
   .form-select {
     width: 60%;
     color: var(--grey-700);
@@ -120,7 +124,7 @@ const DashboardFormWrapper = styled(motion.section)`
     justify-content: end;
     gap: 3em;
     height: auto;
-    width: 100%;
+    width: 50%;
     margin-top: 5rem;
   }
 
@@ -139,50 +143,33 @@ const DashboardFormWrapper = styled(motion.section)`
   .profile-page-btn {
     margin-top: 3rem;
   }
-  .clear-btn {
-    background: var(--grey-500);
-    border-radius: 0;
-    width: 12rem;
-    height: 2.5rem;
-  }
 
-  .clear-btn:hover {
-    outline: 0.5px var(--grey-200) solid;
-    outline-offset: 4px;
-    background: var(--black);
-  }
   @media (min-width: 992px) {
+    .form {
+      margin: 2rem 0 3rem 2rem;
+      width: 90%;
+      max-width: 100%;
+    }
     .form-center {
-      grid-template-columns: 1fr 1fr;
+      display: grid;
       align-items: center;
-      column-gap: 1rem;
+      column-gap: 2rem;
+      width: 100%;
+      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 3.5rem;
+      padding: 2rem 0 0 0;
     }
     .btn-submit,
     .clear-btn {
+      margin-top: 1rem;
       width: 15rem;
     }
-    .btn-container {
-      display: flex;
-      justify-content: end;
-      gap: 3rem;
-      margin-top: 5rem;
-      width: 70%;
-    }
+
     .form-input {
-      width: 80%;
+      width: 100%;
     }
-    .form-row {
-      width: 80%;
-    }
-  }
-  @media (min-width: 1120px) {
-    .form-center {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-    /* .form-center button {
-      margin-top: 0;
-    } */
   }
 `;
 
-export default DashboardFormWrapper;
+export default ProfileWrapper;

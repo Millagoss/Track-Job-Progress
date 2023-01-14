@@ -13,22 +13,34 @@ const NavbarWrapper = styled.nav`
     width: 100px;
   }
   .rotate-right {
-    animation: rotate 300ms ease-in-out forwards;
+    animation: rotate 200ms ease-in-out backwards;
   }
   .rotate-left {
-    animation: rotate-left 300ms ease-in-out forwards;
+    animation: rotate-left 200ms ease-in-out backwards;
   }
+  .scalee {
+    transition: 1s ease-in-out all;
+    animation: scale-up 200ms ease-in-out backwards;
+  }
+
   @keyframes rotate-left {
     100% {
-      transform: rotate(360deg);
+      transform: rotate(360deg) scale(1.5);
     }
   }
 
   @keyframes rotate {
     100% {
-      transform: rotate(-360deg);
+      transform: rotate(-360deg) scale(1.5);
     }
   }
+
+  @keyframes scale-up {
+    100% {
+      transform: scale(2.9);
+    }
+  }
+
   .logo-text-container {
     width: 60%;
     display: flex;

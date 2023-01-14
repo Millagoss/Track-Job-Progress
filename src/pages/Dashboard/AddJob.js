@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import { FormInput, FormSelectRow } from '../../components';
 import { addJob } from '../../store/features/Job/addJobSlice';
-import DashboardFormWrapper from './styles/DashboardFormPage.style';
+import AddJobsWrapper from './styles/AddJob.style';
 
 import { changeHandler, clearForm } from '../../store/features/Job/addJobSlice';
 
@@ -40,7 +40,7 @@ const AddJob = () => {
   };
 
   return (
-    <DashboardFormWrapper
+    <AddJobsWrapper
       initial={{
         opacity: 0,
         marginLeft: '2rem',
@@ -57,48 +57,50 @@ const AddJob = () => {
       }}
     >
       <form className='form'>
-        <h3>{isEditing ? 'edit job' : 'add Course'}</h3>
+        <h3>{isEditing ? 'edit job' : 'add Job'}</h3>
         <div className='form-center'>
-          <FormInput
-            type='text'
-            name='position'
-            value={position}
-            onChange={handleInput}
-            label='position'
-            addClass='move'
-          />
-          <FormInput
-            type='text'
-            name='company'
-            value={company}
-            onChange={handleInput}
-            label='company'
-            addClass='move'
-          />
-          <FormInput
-            type='text'
-            name='jobLocation'
-            value={jobLocation}
-            onChange={handleInput}
-            label='job-location'
-            addClass='move'
-          />
+          <div className='inputs-container'>
+            <FormInput
+              type='text'
+              name='position'
+              value={position}
+              onChange={handleInput}
+              label='position'
+              addClass='move'
+            />
+            <FormInput
+              type='text'
+              name='company'
+              value={company}
+              onChange={handleInput}
+              label='company'
+              addClass='move'
+            />
+            <FormInput
+              type='text'
+              name='jobLocation'
+              value={jobLocation}
+              onChange={handleInput}
+              label='job-location'
+              addClass='move'
+            />
 
-          <FormSelectRow
-            onChange={handleInput}
-            status={status}
-            statusOptions={statusOptions}
-            labelText='status'
-            name='status'
-          />
+            <FormSelectRow
+              onChange={handleInput}
+              status={status}
+              statusOptions={statusOptions}
+              labelText='status'
+              name='status'
+            />
 
-          <FormSelectRow
-            onChange={handleInput}
-            status={jobType}
-            statusOptions={jobTypeOptions}
-            labelText='Job type'
-            name='jobType'
-          />
+            <FormSelectRow
+              onChange={handleInput}
+              status={jobType}
+              statusOptions={jobTypeOptions}
+              labelText='Job type'
+              name='jobType'
+            />
+          </div>
 
           <div className='btn-container'>
             <button
@@ -119,7 +121,7 @@ const AddJob = () => {
           </div>
         </div>
       </form>
-    </DashboardFormWrapper>
+    </AddJobsWrapper>
   );
 };
 

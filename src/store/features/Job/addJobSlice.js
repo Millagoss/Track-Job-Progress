@@ -29,8 +29,7 @@ export const addJob = createAsyncThunk(
       return resp.data;
     } catch (error) {
       if (error.response.status === 401) {
-        toast.error('UNauthorized request!! Logging out...');
-        thunkApi.dispatch(logoutUser());
+        thunkApi.dispatch(logoutUser('UNauthorized request!!'));
         return;
       }
       return thunkApi.rejectWithValue(error.response.data.msg);

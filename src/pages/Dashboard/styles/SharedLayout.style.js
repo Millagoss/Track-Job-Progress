@@ -7,10 +7,10 @@ const SharedLayoutWrapper = styled.section`
   }
   .dashboard-page {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     width: 90vw;
+    padding: 4rem 0 0 2rem;
     margin: 0 auto;
-    padding: 2rem 0;
   }
   @media (min-width: 992px) {
     .dashboard {
