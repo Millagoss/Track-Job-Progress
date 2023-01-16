@@ -7,6 +7,7 @@ const SharedLayoutWrapper = styled.section`
   }
   .dashboard-page {
     display: flex;
+    flex-direction: column;
     justify-content: start;
     width: 90vw;
     padding: 4rem 0 0 2rem;
