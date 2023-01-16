@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { FormInput, FormSelectRow } from '../../components';
-import { addJob } from '../../store/features/Job/addJobSlice';
+import { addJob, editJob } from '../../store/features/Job/addJobSlice';
 import AddJobsWrapper from './styles/AddJob.style';
 
 import { changeHandler, clearForm } from '../../store/features/Job/addJobSlice';
@@ -26,8 +26,15 @@ const AddJob = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!position || !company || !jobLocation) {
       toast.error('please fill out all fields');
+      return;
+    }
+    if (isEditing) {
+      dispatch(
+        editJob({ editJobId, position, company, jobLocation, status, jobType })
+      );
       return;
     }
     dispatch(addJob({ position, company, jobLocation, status, jobType }));
@@ -108,7 +115,7 @@ const AddJob = () => {
               className='btn clear-btn'
               onClick={() => dispatch(clearForm())}
             >
-              clear
+              {isEditing ? 'cancel' : ' clear'}
             </button>
             <button
               type='submit'

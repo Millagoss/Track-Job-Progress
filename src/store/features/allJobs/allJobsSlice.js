@@ -56,7 +56,7 @@ const allJobsSlice = createSlice({
     },
     [fetchJobsAsyncThunk.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      toast.error(payload.msg);
+      toast.error(payload?.msg);
     },
   },
 });

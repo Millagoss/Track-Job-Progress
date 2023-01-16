@@ -6,7 +6,7 @@ import moment from 'moment/moment';
 
 import JobWrapper from './Job.style';
 import JobInfo from '../Job-Info/JobInfo.component';
-import { deleteJob } from '../../store/features/Job/addJobSlice';
+import { deleteJob, setEditJob } from '../../store/features/Job/addJobSlice';
 
 const Job = ({
   _id,
@@ -42,7 +42,18 @@ const Job = ({
             <Link
               to='/add-job'
               className='btn btn-edit'
-              onClick={() => console.log('edit')}
+              onClick={() =>
+                dispatch(
+                  setEditJob({
+                    editJobId: _id,
+                    position,
+                    company,
+                    jobLocation,
+                    jobType,
+                    status,
+                  })
+                )
+              }
             >
               Edit
             </Link>

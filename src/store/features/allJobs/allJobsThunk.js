@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-
 import customFetch from '../../../utils/axios/axios';
 
 export const fetchJobs = async (url, thunkApi) => {
