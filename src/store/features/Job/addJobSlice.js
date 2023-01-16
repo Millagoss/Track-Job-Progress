@@ -2,6 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import customFetch from '../../../utils/axios/axios';
 import { logoutUser } from '../user/userSlice';
+import {
+  showLoading,
+  hideLoading,
+  fetchJobsAsyncThunk,
+} from '../allJobs/allJobsSlice';
 
 const initialState = {
   isLoading: false,
@@ -17,7 +22,7 @@ const initialState = {
 };
 
 export const addJob = createAsyncThunk(
-  'course/addJob',
+  'Job/addJob',
   async (JobInfo, thunkApi) => {
     try {
       const resp = await customFetch.post('/jobs', JobInfo, {
@@ -32,6 +37,25 @@ export const addJob = createAsyncThunk(
         thunkApi.dispatch(logoutUser('UNauthorized request!!'));
         return;
       }
+      return thunkApi.rejectWithValue(error.response.data.msg);
+    }
+  }
+);
+
+export const deleteJob = createAsyncThunk(
+  'Job/deleteJob',
+  async (jobId, thunkApi) => {
+    thunkApi.dispatch(showLoading());
+    try {
+      const resp = await customFetch.delete(`/jobs/${jobId}`, {
+        headers: {
+          authorization: `Bearer ${thunkApi.getState().user.user.token}`,
+        },
+      });
+      thunkApi.dispatch(fetchJobsAsyncThunk());
+      return resp.data;
+    } catch (error) {
+      thunkApi.dispatch(hideLoading());
       return thunkApi.rejectWithValue(error.response.data.msg);
     }
   }
@@ -55,10 +79,17 @@ const addJobSlice = createSlice({
     },
     [addJob.fulfilled]: (state) => {
       state.isLoading = false;
-      toast.success('Course Created');
+      toast.success('Job Created');
     },
     [addJob.rejected]: (state, { payload }) => {
       state.isLoading = false;
+      toast.error(payload);
+    },
+    //////////////////////// deleteJob
+    [deleteJob.fulfilled]: (_, { payload }) => {
+      toast.success(payload.msg);
+    },
+    [deleteJob.rejected]: (_, { payload }) => {
       toast.error(payload);
     },
   },

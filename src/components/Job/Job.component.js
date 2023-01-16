@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment/moment';
 
-import JobInfo from '../Job-Info/JobInfo.component';
-
 import JobWrapper from './Job.style';
+import JobInfo from '../Job-Info/JobInfo.component';
+import { deleteJob } from '../../store/features/Job/addJobSlice';
 
 const Job = ({
   _id,
@@ -49,7 +49,7 @@ const Job = ({
             <button
               type='button'
               className='btn delete-btn'
-              onClick={() => console.log('delete')}
+              onClick={() => dispatch(deleteJob(_id))}
             >
               delete
             </button>
