@@ -118,6 +118,18 @@ const RegisterPage = () => {
         >
           {isLoading ? 'submitting...' : 'submit'}
         </button>
+        <button
+          type='button'
+          disabled={isLoading}
+          className='btn btn-block btn-hipster transition'
+          onClick={() =>
+            dispatch(
+              loginUser({ email: 'testUser@test.com', password: 'secret' })
+            )
+          }
+        >
+          {isLoading ? 'submitting...' : 'Demo'}
+        </button>
         <p>
           {values.isMember ? 'Not a member yet?' : 'Already a member'}
 

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-import customFetch from '../../../utils/axios/axios';
 import { fetchJobs } from './allJobsThunk';
 
 const initialFilterState = {
@@ -25,10 +24,7 @@ const initialState = {
 
 export const fetchJobsAsyncThunk = createAsyncThunk(
   'Jobs/fetchJobs',
-  async (_, thunkApi) => {
-    let url = '/jobs';
-    return fetchJobs(url, thunkApi);
-  }
+  fetchJobs
 );
 
 const allJobsSlice = createSlice({

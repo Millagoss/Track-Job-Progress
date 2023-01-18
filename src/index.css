@@ -180,12 +180,12 @@ ul {
   box-shadow: var(--shadow-3);
 }
 .btn-hipster {
-  color: var(--primary-500);
-  background: var(--primary-200);
+  color: var(--myPrimary-800);
+  background: var(--grey-200);
 }
 .btn-hipster:hover {
-  color: var(--primary-200);
-  background: var(--primary-700);
+  color: var(--myPrimary-800);
+  background: var(--grey-100);
 }
 .btn-block {
   width: 100%;

@@ -7,7 +7,7 @@ import {
 import { logoutUser } from '../user/userSlice';
 import { clearForm } from './addJobSlice';
 
-export const addJobAsyncThunk = async (JobInfo, thunkApi, clearForm) => {
+export const addJobAsyncThunk = async (JobInfo, thunkApi) => {
   try {
     const resp = await customFetch.post('/jobs', JobInfo, {
       headers: {
