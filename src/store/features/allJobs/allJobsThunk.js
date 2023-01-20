@@ -14,3 +14,16 @@ export const fetchJobs = async (_, thunkApi) => {
     return thunkApi.rejectWithValue(error.response.data);
   }
 };
+
+export const getStatusAsyncThunk = async (_, thunkApi) => {
+  try {
+    const resp = await customFetch.get('/jobs/stats', {
+      headers: {
+        authorization: `Bearer ${thunkApi.getState().user.user.token}`,
+      },
+    });
+    return resp.data;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.response.data);
+  }
+};
