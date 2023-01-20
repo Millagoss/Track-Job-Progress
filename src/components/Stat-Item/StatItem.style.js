@@ -1,10 +1,13 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Wrapper = styled.article`
+const StatItemWrapper = styled.article`
+  width: 95%;
   padding: 2rem;
-  background: var(--white);
-  border-radius: var(--borderRadius);
-  border-bottom: 5px solid ${(props) => props.color};
+  background: var(--grey-50);
+  outline: 1px solid ${(props) => props.color};
+  outline-offset: 5px;
+  box-shadow: 10px 10px 1px 0.51px ${(props) => props.color};
+
   header {
     display: flex;
     align-items: center;
@@ -36,6 +39,6 @@ const Wrapper = styled.article`
       color: ${(props) => props.color};
     }
   }
-`
+`;
 
-export default Wrapper
+export default StatItemWrapper;

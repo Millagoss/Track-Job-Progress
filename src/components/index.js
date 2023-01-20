@@ -8,6 +8,8 @@ import FormSelectRow from './Form-row-select/FormRowSelect.component';
 import SearchContainer from './SearchContainer/SearchContainer.component';
 import JobsContainer from './Jobs-Container/JobsContainer.component';
 import Loading from './Loading/Loading.component';
+import ChartContainer from './ChartContainer/ChartContainer.component';
+import StatsContainer from './StatsContainer/statsContainer.component';
 
 export {
   Loading,
@@ -20,4 +22,6 @@ export {
   Navbar,
   JobsContainer,
   SearchContainer,
+  StatsContainer,
+  ChartContainer,
 };
