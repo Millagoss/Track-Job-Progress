@@ -61,6 +61,8 @@ const BigSidebarWrapper = styled.aside`
     }
     .active {
       color: var(--grey-900);
+      padding-left: 3rem;
+      background: var(--grey-50);
     }
     .active .icon {
       color: var(--myPrimary-500);

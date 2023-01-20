@@ -69,10 +69,10 @@ const SmallSidebarWrapper = styled.aside`
     transition: var(--transition);
   }
   .active {
-    color: var(--grey-900);
+    color: var(--myPrimary-200);
   }
   .active .icon {
-    color: var(--myPrimary-500);
+    color: var(--myPrimary-200);
   }
 `;
 export default SmallSidebarWrapper;
