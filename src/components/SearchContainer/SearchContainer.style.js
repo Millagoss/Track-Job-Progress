@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Wrapper = styled.section`
+const SearchContainerWrapper = styled.section`
   .form {
     width: 100%;
     max-width: 100%;
@@ -39,6 +39,6 @@ const Wrapper = styled.section`
       margin-top: 0;
     }
   }
-`
+`;
 
-export default Wrapper
+export default SearchContainerWrapper;

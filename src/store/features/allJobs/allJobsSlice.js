@@ -8,7 +8,7 @@ const initialFilterState = {
   searchStatus: 'all',
   searchType: 'all',
   sort: 'latest',
-  sortOption: ['latest', 'oldest', 'a-z', 'z-a'],
+  sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
 };
 
 const initialState = {
@@ -41,6 +41,14 @@ const allJobsSlice = createSlice({
     },
     hideLoading: (state) => {
       state.isLoading = false;
+    },
+    handleSearchFormInput: (state, { payload }) => {
+      const { name, value } = payload;
+      return { ...state, [name]: value };
+    },
+    clearFilter: (state) => {
+      console.log('wtf');
+      state.searchStatus = 'all';
     },
   },
   extraReducers: {
@@ -78,4 +86,5 @@ const allJobsSlice = createSlice({
 
 export default allJobsSlice.reducer;
 
-export const { hideLoading, showLoading } = allJobsSlice.actions;
+export const { hideLoading, showLoading, handleSearchFormInput, clearFilter } =
+  allJobsSlice.actions;
