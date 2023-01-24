@@ -5,6 +5,8 @@ import JobsContainerWrapper from './JobsContainer.style';
 import Job from '../Job/Job.component';
 import { Loading } from '../';
 
+import { motion } from 'framer-motion';
+
 const JobsContainer = () => {
   const dispatch = useDispatch();
   const { isLoading, jobs } = useSelector((store) => store.allJobs);
@@ -24,11 +26,11 @@ const JobsContainer = () => {
   return (
     <JobsContainerWrapper>
       <h5>Jobs info</h5>
-      <div className='jobs'>
+      <motion.div layout className='jobs'>
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />;
         })}
-      </div>
+      </motion.div>
     </JobsContainerWrapper>
   );
 };
