@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa';
 import { useSelector } from 'react-redux';

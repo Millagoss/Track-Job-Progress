@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const JobWrapper = styled.article`
+const JobWrapper = styled(motion.article)`
   background: var(--white);
   border-radius: var(--borderRadius);
   display: grid;

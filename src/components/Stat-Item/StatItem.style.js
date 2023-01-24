@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StatItemWrapper = styled.article`
+const StatItemWrapper = styled(motion.article)`
   width: 95%;
   padding: 2rem;
   background: var(--grey-50);

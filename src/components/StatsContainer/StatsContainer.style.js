@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StatsContainerWrapper = styled.section`
+const StatsContainerWrapper = styled(motion.section)`
   display: grid;
   row-gap: 2rem;
   margin-bottom: 2rem;
