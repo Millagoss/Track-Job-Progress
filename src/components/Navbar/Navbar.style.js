@@ -6,7 +6,9 @@ const NavbarWrapper = styled.nav`
   align-items: center;
   justify-content: center;
   box-shadow: 10px 0px 10px 0px rgba(0, 120, 0, 0.5);
-  z-index: 1;
+  z-index: 3;
+  position: fixed;
+  width: 100%;
   .logo {
     display: flex;
     align-items: center;

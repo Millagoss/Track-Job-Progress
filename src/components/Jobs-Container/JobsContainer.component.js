@@ -6,10 +6,15 @@ import Job from '../Job/Job.component';
 import { Loading } from '../';
 
 import { motion } from 'framer-motion';
+import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 
 const JobsContainer = () => {
   const dispatch = useDispatch();
   const { isLoading, jobs } = useSelector((store) => store.allJobs);
+
+  useEffect(() => {
+    dispatch(fetchJobsAsyncThunk());
+  }, []);
 
   if (isLoading) {
     return <Loading center />;

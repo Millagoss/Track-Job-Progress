@@ -7,10 +7,6 @@ import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 const AllJobs = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchJobsAsyncThunk());
-  }, []);
-
   return (
     <>
       <SearchContainer />
