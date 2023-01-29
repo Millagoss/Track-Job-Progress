@@ -94,7 +94,7 @@ const AddJob = () => {
 
             <FormSelectRow
               onChange={handleInput}
-              status={status}
+              value={status}
               statusOptions={statusOptions}
               labelText='status'
               name='status'
@@ -102,7 +102,7 @@ const AddJob = () => {
 
             <FormSelectRow
               onChange={handleInput}
-              status={jobType}
+              value={jobType}
               statusOptions={jobTypeOptions}
               labelText='Job type'
               name='jobType'

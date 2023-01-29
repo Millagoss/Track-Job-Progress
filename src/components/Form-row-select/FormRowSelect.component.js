@@ -1,12 +1,6 @@
 import React from 'react';
 
-const FormSelectRow = ({
-  labelText,
-  onChange,
-  name,
-  status,
-  statusOptions,
-}) => {
+const FormSelectRow = ({ labelText, onChange, name, value, statusOptions }) => {
   return (
     <div className='form-row'>
       <label htmlFor={name} className='form-label'>
@@ -15,7 +9,7 @@ const FormSelectRow = ({
       <select
         name={name}
         id={name}
-        value={status}
+        value={value}
         onChange={onChange}
         className='form-select'
       >

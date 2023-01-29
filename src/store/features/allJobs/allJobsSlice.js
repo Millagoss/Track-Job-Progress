@@ -47,8 +47,7 @@ const allJobsSlice = createSlice({
       return { ...state, [name]: value };
     },
     clearFilter: (state) => {
-      console.log('wtf');
-      state.searchStatus = 'all';
+      return { ...state, ...initialFilterState };
     },
   },
   extraReducers: {
@@ -83,7 +82,6 @@ const allJobsSlice = createSlice({
     },
   },
 });
-
 export default allJobsSlice.reducer;
 
 export const { hideLoading, showLoading, handleSearchFormInput, clearFilter } =
