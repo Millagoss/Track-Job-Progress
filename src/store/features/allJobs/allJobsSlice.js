@@ -11,7 +11,7 @@ const initialFilterState = {
   sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
 };
 
-const initialState = {
+export const initialState = {
   isLoading: false,
   jobs: [],
   totalJobs: 0,
@@ -19,12 +19,13 @@ const initialState = {
   page: 1,
   stats: {},
   monthlyApplications: [],
+  isFilter: true,
   ...initialFilterState,
 };
 
 export const fetchJobsAsyncThunk = createAsyncThunk(
   'Jobs/fetchJobs',
-  fetchJobs
+  async (_, thunkApi) => fetchJobs(thunkApi)
 );
 
 export const showStats = createAsyncThunk(
@@ -51,6 +52,9 @@ const allJobsSlice = createSlice({
     },
     changePage: (state, { payload }) => {
       state.page = payload;
+    },
+    toggleFilter: (state, { payload }) => {
+      state.isFilter = payload ? true : !state.isFilter;
     },
   },
   extraReducers: {
@@ -93,4 +97,5 @@ export const {
   handleSearchFormInput,
   clearFilter,
   changePage,
+  toggleFilter,
 } = allJobsSlice.actions;

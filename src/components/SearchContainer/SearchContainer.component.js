@@ -7,15 +7,22 @@ import { FormInput, FormSelectRow } from '../';
 import {
   handleSearchFormInput,
   clearFilter,
+  toggleFilter,
 } from '../../store/features/allJobs/allJobsSlice';
 
 import SearchContainerWrapper from './SearchContainer.style';
 
 const SearchContainer = () => {
-  const [toggleFil, setToggleFil] = useState(true);
   const dispatch = useDispatch();
-  const { isLoading, search, searchStatus, searchType, sortOptions, sort } =
-    useSelector((store) => store.allJobs);
+  const {
+    isLoading,
+    search,
+    searchStatus,
+    searchType,
+    sortOptions,
+    sort,
+    isFilter,
+  } = useSelector((store) => store.allJobs);
 
   const { statusOptions, jobTypeOptions } = useSelector(
     (store) => store.addJob
@@ -31,12 +38,11 @@ const SearchContainer = () => {
     dispatch(clearFilter());
   };
 
-  const toggleFilter = () => {
-    setToggleFil(!toggleFil);
+  const toggleFilterHandler = () => {
+    dispatch(toggleFilter());
   };
-
   return (
-    <SearchContainerWrapper prop={toggleFil ? 'form-move-out' : null}>
+    <SearchContainerWrapper prop={isFilter ? 'form-move-out' : null}>
       <form className='form'>
         <h4>search form</h4>
         <div className='form-center'>
@@ -73,11 +79,11 @@ const SearchContainer = () => {
           <button
             className='toggle-filter'
             type='button'
-            onClick={toggleFilter}
+            onClick={toggleFilterHandler}
           >
             {/* Hide filter <BsChevronDoubleDown /> */}
-            {!toggleFil ? 'Hide filter' : 'Show Filter'}
-            {!toggleFil ? (
+            {!isFilter ? 'Hide filter' : 'Show Filter'}
+            {!isFilter ? (
               <BsChevronDoubleUp className='doubled-arrow-icon' />
             ) : (
               <BsChevronDoubleDown className='doubled-arrow-icon' />

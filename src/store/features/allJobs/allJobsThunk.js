@@ -1,8 +1,10 @@
 import customFetch from '../../../utils/axios/axios';
 
-export const fetchJobs = async (_, thunkApi) => {
-  let url = '/jobs';
+export const fetchJobs = async (thunkApi) => {
+  const { page, searchStatus, searchType, sort, search } =
+    thunkApi.getState().allJobs;
 
+  let url = `/jobs?page=${page}&status=${searchStatus}&jobType${searchType}&sort=${sort}`;
   try {
     const resp = await customFetch.get(url, {
       headers: {

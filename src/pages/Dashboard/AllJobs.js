@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 import { JobsContainer, SearchContainer } from '../../components';
-import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 
 const AllJobs = () => {
-  const dispatch = useDispatch();
-
   return (
     <>
       <SearchContainer />
