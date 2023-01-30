@@ -343,11 +343,12 @@ ul {
 
 .Toastify__toast {
   text-transform: capitalize;
-  background: red;
   width: max-content;
   max-width: 500px;
 }
-
+.toast {
+  margin-left: 2rem;
+}
 .logo-container {
   height: 5rem;
   display: flex;
