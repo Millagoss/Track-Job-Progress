@@ -49,6 +49,9 @@ const allJobsSlice = createSlice({
     clearFilter: (state) => {
       return { ...state, ...initialFilterState };
     },
+    changePage: (state, { payload }) => {
+      state.page = payload;
+    },
   },
   extraReducers: {
     [fetchJobsAsyncThunk.pending]: (state) => {
@@ -84,5 +87,10 @@ const allJobsSlice = createSlice({
 });
 export default allJobsSlice.reducer;
 
-export const { hideLoading, showLoading, handleSearchFormInput, clearFilter } =
-  allJobsSlice.actions;
+export const {
+  hideLoading,
+  showLoading,
+  handleSearchFormInput,
+  clearFilter,
+  changePage,
+} = allJobsSlice.actions;

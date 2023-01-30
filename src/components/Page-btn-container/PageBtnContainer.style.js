@@ -12,7 +12,7 @@ const PageBtnWrapper = styled.section`
     background: var(--primary-100);
     border-radius: var(--borderRadius);
   }
-  .pageBtn {
+  .page-btn {
     background: transparent;
     border-color: transparent;
     width: 50px;
