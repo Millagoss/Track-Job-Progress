@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
 import { toggleFilter } from '../../store/features/allJobs/allJobsSlice';
@@ -8,6 +8,9 @@ import SharedLayoutWrapper from './styles/SharedLayout.style';
 
 const SharedLayout = () => {
   const dispatch = useDispatch();
+  const { isLoading } = useSelector((store) => store.allJobs);
+
+  const { isSidebarOpen } = useSelector((store) => store.user);
 
   const handleClick = (e) => {
     const check =
@@ -19,6 +22,8 @@ const SharedLayout = () => {
       e.target.className == 'status pending' ||
       e.target.className == 'status interview' ||
       e.target.className == 'jobs' ||
+      e.target.className == 'cover' ||
+      e.target.className == 'cover resize' ||
       e.target.className == 'icon';
     if (check) {
       dispatch(toggleFilter('close'));
@@ -32,6 +37,9 @@ const SharedLayout = () => {
         <SmallSidebar />
         <BigSidebar />
         <div onClick={handleClick} className='outlet-container'>
+          {isLoading && (
+            <div className={isSidebarOpen ? 'cover resize' : 'cover'}></div>
+          )}
           <Navbar />
           <div className='dashboard-page'>
             <Outlet />

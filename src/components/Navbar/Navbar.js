@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   FaAlignLeft,
@@ -12,7 +12,6 @@ import { Logo } from '../';
 import { toggleSidebar, logoutUser } from '../../store/features/user/userSlice';
 
 import NavbarWrapper from './Navbar.style';
-import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);

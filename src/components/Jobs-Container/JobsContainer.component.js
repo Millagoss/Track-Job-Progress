@@ -11,7 +11,6 @@ import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 const JobsContainer = () => {
   const dispatch = useDispatch();
   const {
-    isLoading,
     jobs,
     numOfPages,
     totalJobs,
@@ -25,10 +24,6 @@ const JobsContainer = () => {
   useEffect(() => {
     dispatch(fetchJobsAsyncThunk());
   }, [search, searchStatus, searchType, sort, page]);
-
-  if (isLoading) {
-    return <Loading center />;
-  }
 
   if (jobs.length < 1) {
     return (
