@@ -12,6 +12,10 @@ import { Logo } from '../';
 import { toggleSidebar, logoutUser } from '../../store/features/user/userSlice';
 
 import NavbarWrapper from './Navbar.style';
+import {
+  clearFilter,
+  toggleFilter,
+} from '../../store/features/allJobs/allJobsSlice';
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);
@@ -23,6 +27,8 @@ const Navbar = () => {
   };
 
   const logout_user = () => {
+    dispatch(toggleFilter('close'));
+    dispatch(clearFilter());
     dispatch(logoutUser());
   };
   return (
