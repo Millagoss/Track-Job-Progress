@@ -25,7 +25,7 @@ export const initialState = {
 
 export const fetchJobsAsyncThunk = createAsyncThunk(
   'Jobs/fetchJobs',
-  async (_, thunkApi) => fetchJobs(thunkApi)
+  fetchJobs
 );
 
 export const showStats = createAsyncThunk(
@@ -45,7 +45,8 @@ const allJobsSlice = createSlice({
     },
     handleSearchFormInput: (state, { payload }) => {
       const { name, value } = payload;
-      return { ...state, [name]: value };
+      state[name] = value;
+      state.page = 1;
     },
     clearFilter: (state) => {
       return { ...state, ...initialFilterState };

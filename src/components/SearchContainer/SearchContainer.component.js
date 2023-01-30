@@ -29,6 +29,7 @@ const SearchContainer = () => {
   );
 
   const handleSearch = (e) => {
+    if (isLoading) return;
     const name = e.target.name;
     const value = e.target.value;
     dispatch(handleSearchFormInput({ name, value }));
