@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 import JobsContainerWrapper from './JobsContainer.style';
 import Job from '../Job/Job.component';
-import { Loading } from '../';
 import PageBtnContainer from '../Page-btn-container/PageBtnContainer';
 import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 
@@ -19,13 +18,14 @@ const JobsContainer = () => {
     searchType,
     page,
     sort,
+    isLoading,
   } = useSelector((store) => store.allJobs);
 
   useEffect(() => {
     dispatch(fetchJobsAsyncThunk());
   }, [search, searchStatus, searchType, sort, page]);
 
-  if (jobs.length < 1) {
+  if (jobs.length < 1 && !isLoading) {
     return (
       <JobsContainerWrapper>
         <h2>No Job to display...</h2>
