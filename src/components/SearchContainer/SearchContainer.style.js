@@ -225,7 +225,7 @@ const SearchContainerWrapper = styled.section`
     ${({ prop }) =>
       prop &&
       `
-    margin-top: -450px;
+    margin-top: -460px;
   `}
 
     .toggle-filter {
