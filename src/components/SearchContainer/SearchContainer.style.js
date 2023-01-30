@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SearchContainerWrapper = styled.section`
   border-radius: var(--borderRadius);
-  width: 400px;
+  width: 350px;
   padding: 1rem 2rem 1rem 2rem;
   background: var(--grey-50);
   box-shadow: 0px 10px 30px 10px var(--myPrimary-50);
@@ -13,6 +13,8 @@ const SearchContainerWrapper = styled.section`
   position: fixed;
   z-index: 2;
   margin-top: 40px;
+  margin-left: -20px;
+
   ${({ prop }) =>
     prop &&
     `

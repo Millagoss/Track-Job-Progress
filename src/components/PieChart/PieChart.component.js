@@ -31,7 +31,7 @@ function PieChartComp({ data }) {
   return (
     <div
       id='chartPieDiv'
-      className='chart  add-chart-border'
+      className='chart add-chart-border pie-chart'
       style={{ width: '100%', height: '500px' }}
     ></div>
   );

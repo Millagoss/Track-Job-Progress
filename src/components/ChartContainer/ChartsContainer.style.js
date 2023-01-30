@@ -32,6 +32,7 @@ const ChartContainerWrapper = styled.section`
   }
   .chart {
     background: var(--white);
+    overflow: scroll;
   }
   .add-chart-border {
     margin-top: -2px;

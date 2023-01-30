@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 
 import customFetch from '../../../utils/axios/axios';
+import { clearAllJobsState, clearFilter } from '../allJobs/allJobsSlice';
 import { logoutUser } from './userSlice';
 
 export const registerUserThunk = async (path, userInfo, thunkApi) => {
@@ -36,5 +37,16 @@ export const updateUserInfoThunk = async (path, userInfo, thunkApi) => {
       return;
     }
     return thunkApi.rejectWithValue(error.response.data.msg);
+  }
+};
+
+export const clearStoreThunk = async (message, thunkApi) => {
+  try {
+    thunkApi.dispatch(logoutUser(message));
+    thunkApi.dispatch(clearAllJobsState());
+    thunkApi.dispatch(clearFilter());
+    return Promise.resolve();
+  } catch (error) {
+    return Promise.reject();
   }
 };
