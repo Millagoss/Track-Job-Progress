@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 const AddJobsWrapper = styled(motion.section)`
   border-radius: var(--borderRadius);
   width: 80%;
-  padding: 3rem 2rem 4rem 2rem;
+  margin-top: 3rem;
+  padding: 2rem 2rem 4rem 2rem;
   background: var(--grey-50);
   box-shadow: 0px 10px 30px 20px var(--grey-100);
   border-style: solid;
@@ -21,13 +22,13 @@ const AddJobsWrapper = styled(motion.section)`
       display: flex;
       flex-direction: column;
       width: 100%;
-      row-gap: 5.5rem;
+      row-gap: 3rem;
     }
     .inputs-container {
       display: flex;
       flex-direction: column;
       width: 100%;
-      row-gap: 2.5rem;
+      row-gap: 2rem;
       margin-top: 2rem;
     }
   }

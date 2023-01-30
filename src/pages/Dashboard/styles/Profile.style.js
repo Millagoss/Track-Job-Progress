@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const ProfileWrapper = styled(motion.section)`
   border-radius: var(--borderRadius);
   width: 80%;
+  margin-top: 3rem;
   padding: 3rem 2rem 4rem 2rem;
   background: var(--grey-50);
   box-shadow: 0px 10px 30px 20px var(--grey-100);
