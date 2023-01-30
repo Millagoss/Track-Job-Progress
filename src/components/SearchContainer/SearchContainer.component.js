@@ -1,10 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {
-  BsChevronBarUp,
-  BsChevronDoubleDown,
-  BsChevronDoubleUp,
-} from 'react-icons/bs';
+import { BsChevronDoubleDown, BsChevronDoubleUp } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { FormInput, FormSelectRow } from '../';
 

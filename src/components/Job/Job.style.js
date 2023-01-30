@@ -23,12 +23,12 @@ const JobWrapper = styled(motion.article)`
     height: 60px;
     display: grid;
     place-items: center;
-    background: var(--primary-500);
+    background: var(--myPrimary-100);
     border-radius: var(--borderRadius);
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--black);
     margin-right: 2rem;
   }
   .info {

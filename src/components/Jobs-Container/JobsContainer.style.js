@@ -7,9 +7,9 @@ const JobsContainerWrapper = styled.section`
   }
   & > h5 {
     font-weight: 800;
-    font-size: 3rem;
-    text-align: center;
-    color: var(--black);
+    font-size: 2rem;
+    text-align: left;
+    color: var(--grey-500);
   }
   .jobs {
     display: grid;

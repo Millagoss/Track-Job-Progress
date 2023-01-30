@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const SearchContainerWrapper = styled.section`
   border-radius: var(--borderRadius);
   width: 400px;
-  padding: 3rem 2rem 4rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   background: var(--grey-50);
   box-shadow: 0px 10px 30px 10px var(--myPrimary-50);
   border-style: solid;
@@ -16,7 +16,7 @@ const SearchContainerWrapper = styled.section`
   ${({ prop }) =>
     prop &&
     `
-    margin-top: -620px;
+    margin-top: -440px;
   `}
 
   @keyframes bounce {
@@ -30,7 +30,9 @@ const SearchContainerWrapper = styled.section`
       color: var(--grey-100);
     }
   }
-
+  h4 {
+    margin: 0;
+  }
   .toggle-filter {
     display: flex;
     justify-content: center;
@@ -78,13 +80,13 @@ const SearchContainerWrapper = styled.section`
       display: flex;
       flex-direction: column;
       width: 100%;
-      row-gap: 5rem;
+      row-gap: 3rem;
     }
     .inputs-container {
       display: flex;
       flex-direction: column;
       width: 100%;
-      row-gap: 2rem;
+      row-gap: 1rem;
       margin-top: 2rem;
     }
   }
@@ -223,7 +225,7 @@ const SearchContainerWrapper = styled.section`
     ${({ prop }) =>
       prop &&
       `
-    margin-top: -560px;
+    margin-top: -450px;
   `}
 
     .toggle-filter {

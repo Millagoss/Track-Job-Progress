@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 import JobsContainerWrapper from './JobsContainer.style';
 import Job from '../Job/Job.component';
 import { Loading } from '../';
-
-import { motion } from 'framer-motion';
+import PageBtnContainer from '../Page-btn-container/PageBtnContainer';
 import { fetchJobsAsyncThunk } from '../../store/features/allJobs/allJobsSlice';
 
 const JobsContainer = () => {
   const dispatch = useDispatch();
-  const { isLoading, jobs } = useSelector((store) => store.allJobs);
+  const { isLoading, jobs, numOfPages, totalJobs } = useSelector(
+    (store) => store.allJobs
+  );
 
   useEffect(() => {
     dispatch(fetchJobsAsyncThunk());
@@ -30,12 +32,15 @@ const JobsContainer = () => {
 
   return (
     <JobsContainerWrapper>
-      <h5>Jobs info</h5>
+      <h5>
+        {totalJobs} Job{totalJobs > 1 && 's'} Found
+      </h5>
       <motion.div layout className='jobs'>
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />;
         })}
       </motion.div>
+      {numOfPages > 1 && <PageBtnContainer />}
     </JobsContainerWrapper>
   );
 };
