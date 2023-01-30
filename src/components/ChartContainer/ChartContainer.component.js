@@ -5,10 +5,16 @@ import PieChartComp from '../PieChart/PieChart.component';
 import BarChartComp from '../BarChart/BarChart.component';
 
 import ChartContainerWrapper from './ChartsContainer.style';
+import Loading from '../Loading/Loading.component';
 
 const ChartContainer = () => {
   const [barChart, setBarChart] = useState(true);
   const { monthlyApplications: data } = useSelector((store) => store.allJobs);
+  const { isLoading } = useSelector((store) => store.allJobs);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <ChartContainerWrapper>

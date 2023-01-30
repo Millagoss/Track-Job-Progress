@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const JobsContainerWrapper = styled.section`
   margin-top: 6rem;
+  margin-bottom: 5rem;
   h2 {
     text-transform: none;
   }
